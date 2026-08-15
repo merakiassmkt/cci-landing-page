@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCI Marília — Centro de Comunicação Inglesa</title>
+  <meta name="description"
+    content="Mais de 40 anos ensinando inglês em Marília. Turmas para crianças, adolescentes, adultos e aulas VIP individuais.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0A1640;
+      --ink-70: rgba(10, 22, 64, .70);
+      --blue: #1B3BD8;
+      --blue-deep: #12256F;
+      --blue-soft: #E9EDFF;
+      --red: #E11D34;
+      --paper: #FBFBFD;
+      --line: rgba(10, 22, 64, .12);
+      --gray: #616A85;
+      --display: 'Poppins', system-ui, sans-serif;
+      --body: 'Roboto', system-ui, -apple-system, sans-serif;
+      --serif: 'Playfair Display', serif;
+      --mono: 'Poppins', system-ui, sans-serif;
+      --r: 14px;
+      --pad: clamp(20px, 5vw, 72px);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 3px;
+      border-radius: 4px
+    }
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 var(--pad)
+    }
+
+    /* ---------- tipografia ---------- */
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+      color: var(--ink)
+    }
+
+    h1 em,
+    h2 em,
+    h3 em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--blue-deep), var(--red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      padding-right: 4px;
+    }
+
+    .sec-head h2 {
+      position: relative;
+      padding-bottom: 18px
+    }
+
+    .sec-head h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 46px;
+      height: 4px;
+      background: var(--blue-deep);
+      border-radius: 2px;
+    }
+
+    .sec-head[style*="text-align: center"] h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6.4vw, 5.1rem)
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4.2vw, 3.4rem)
+    }
+
+    p {
+      max-width: 62ch
+    }
+
+    .lead {
+      font-size: clamp(1.02rem, 1.4vw, 1.18rem);
+      color: var(--ink-70)
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--red);
+      flex: none
+    }
+
+    .ipa {
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--gray);
+      letter-spacing: .02em;
+      text-transform: none
+    }
+
+    /* ---------- header ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(251, 251, 253, .86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s, box-shadow .3s;
+    }
+
+    header.stuck {
+      border-color: var(--line);
+      box-shadow: 0 6px 30px -22px rgba(10, 22, 64, .55)
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      height: 76px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex: none
+    }
+
+    .brand svg {
+      width: 38px;
+      height: 38px;
+      flex: none
+    }
+
+    .brand b {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -.05em
+    }
+
+    .brand span {
+      font-family: var(--mono);
+      font-size: .62rem;
+      letter-spacing: .16em;
+      color: var(--gray);
+      text-transform: uppercase;
+      display: block;
+      margin-top: -2px
+    }
+
+    nav {
+      display: flex;
+      gap: 26px;
+      margin-left: auto;
+      align-items: center
+    }
+
+    nav a {
+      font-size: .93rem;
+      font-weight: 500;
+      color: var(--ink-70);
+      position: relative;
+      padding: 6px 0;
+      transition: color .2s
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--red);
+      transition: width .25s
+    }
+
+    nav a:hover {
+      color: var(--ink)
+    }
+
+    nav a:hover::after {
+      width: 100%
+    }
+
+    .lang {
+      display: flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px;
+      background: #fff;
+      flex: none;
+    }
+
+    .lang button {
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .08em;
+      border: 0;
+      background: none;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: var(--gray);
+      transition: .2s;
+    }
+
+    .lang button[aria-pressed="true"] {
+      background: var(--ink);
+      color: #fff
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 600;
+      font-size: .95rem;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform .18s cubic-bezier(.2, .8, .3, 1), box-shadow .18s, background .18s, color .18s;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      box-shadow: 0 10px 24px -12px rgba(225, 29, 52, .9)
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px -12px rgba(225, 29, 52, .95)
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      color: var(--ink);
+      background: #fff
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px)
+    }
+
+    .btn-sm {
+      padding: 11px 18px;
+      font-size: .88rem
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      padding: 8px;
+      flex: none
+    }
+
+    .burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--ink);
+      margin: 5px 0;
+      transition: .25s
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 18px;
+      background: var(--blue-soft);
+      color: var(--blue-deep);
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .btn-anim-border {
+      background:
+        linear-gradient(var(--blue), var(--blue)) padding-box,
+        linear-gradient(60deg, #E11D34, #1B3BD8, #FF8A00, #E11D34) border-box;
+      border: 3px solid transparent;
+      background-size: 100% 100%, 300% 300%;
+      animation: grad-border 3s ease infinite;
+      box-shadow: 0 10px 24px -12px rgba(27, 59, 216, .9);
+    }
+
+    .btn-anim-border:hover {
+      box-shadow: 0 16px 30px -12px rgba(27, 59, 216, .95);
+    }
+
+    @keyframes grad-border {
+      0% {
+        background-position: 0% 0%, 0% 50%;
+      }
+
+      50% {
+        background-position: 0% 0%, 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 0%, 0% 50%;
+      }
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      padding: clamp(48px, 8vw, 96px) 0 clamp(56px, 7vw, 88px)
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: clamp(32px, 5vw, 72px);
+      align-items: center
+    }
+
+    h1 .rot {
+      display: inline-grid;
+      vertical-align: baseline;
+      color: var(--blue);
+    }
+
+    h1 .rot i {
+      grid-area: 1/1;
+      font-style: normal;
+      opacity: 0;
+      transform: translateY(.35em);
+      transition: opacity .45s, transform .45s;
+      white-space: nowrap
+    }
+
+    h1 .rot i.on {
+      opacity: 1;
+      transform: none
+    }
+
+    .hero p.lead {
+      margin-top: 26px
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px
+    }
+
+    .trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px;
+      margin-top: 40px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line)
+    }
+
+    .trust div {
+      display: flex;
+      flex-direction: column
+    }
+
+    .trust b {
+      font-family: var(--display);
+      font-size: 1.6rem;
+      letter-spacing: -.03em;
+      line-height: 1
+    }
+
+    .trust small {
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: 6px
+    }
+
+    .frame {
+      position: relative;
+      padding: 18px 18px 0 0
+    }
+
+    .frame::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 46px 46px;
+      background: var(--red);
+      border-radius: var(--r)
+    }
+
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 46px 46px 0 0;
+      background: var(--blue-deep);
+      border-radius: var(--r)
+    }
+
+    .frame .shot {
+      position: relative;
+      z-index: 2;
+      aspect-ratio: 4/4.6;
+      border-radius: var(--r);
+      overflow: hidden;
+      background: linear-gradient(150deg, #12256F, #1B3BD8 55%, #E11D34);
+      display: flex;
+      align-items: flex-end;
+      padding: 26px;
+      color: #fff;
+    }
+
+    .frame .shot img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .frame .shot span {
+      position: relative;
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: rgba(10, 22, 64, .42);
+      backdrop-filter: blur(6px);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* ---------- faixa de nível (GAMIFICADA) ---------- */
+    .levels {
+      background: var(--ink);
+      color: #fff;
+      border-radius: var(--r);
+      padding: clamp(28px, 4vw, 52px);
+      margin: 0 0 clamp(64px, 9vw, 120px);
+      overflow: hidden;
+    }
+
+    .levels-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 38px
+    }
+
+    .levels h2 {
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      max-width: 16ch
+    }
+
+    .levels .eyebrow {
+      color: #8FA3FF
+    }
+
+    .progress-map {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+    }
+
+    .progress-track {
+      position: absolute;
+      top: 75px;
+      left: 10%;
+      right: 10%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      z-index: 1;
+    }
+
+    .progress-fill {
+      position: absolute;
+      top: 75px;
+      left: 10%;
+      height: 6px;
+      background: var(--red);
+      border-radius: 3px;
+      z-index: 2;
+      width: 0%;
+      transition: width 2s cubic-bezier(.2, .8, .3, 1);
+    }
+
+    .levels.in .progress-fill {
+      width: 80%;
+    }
+
+    .game-step {
+      position: relative;
+      z-index: 3;
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .pixel-char-container {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 12px;
+      opacity: 0.3;
+      transform: translateY(10px);
+      transition: 0.5s;
+    }
+
+    .pixel-char-container svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+    }
+
+    .game-node {
+      width: 20px;
+      height: 20px;
+      background: var(--ink);
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      margin-bottom: 16px;
+      transition: 0.3s;
+      box-shadow: 0 0 0px transparent;
+    }
+
+    .game-step b {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      display: block;
+      letter-spacing: -0.03em;
+    }
+
+    .game-step small {
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .6);
+      display: block;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* Animações Sequenciais do Game */
+    .levels.in .game-step:nth-child(1) .pixel-char-container {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.2s;
+    }
+
+    .levels.in .game-step:nth-child(1) .game-node {
+      border-color: var(--red);
+      background: var(--red);
+      box-shadow: 0 0 15px var(--red);
+      transition-delay: 0.2s;
+    }
+
+    .levels.in .game-step:nth-child(2) .pixel-char-container {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.6s;
+    }
+
+    .levels.in .game-step:nth-child(2) .game-node {
+      border-color: var(--red);
+      background: var(--red);
+      box-shadow: 0 0 15px var(--red);
+      transition-delay: 0.6s;
+    }
+
+    .levels.in .game-step:nth-child(3) .pixel-char-container {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 1.0s;
+    }
+
+    .levels.in .game-step:nth-child(3) .game-node {
+      border-color: var(--red);
+      background: var(--red);
+      box-shadow: 0 0 15px var(--red);
+      transition-delay: 1.0s;
+    }
+
+    .levels.in .game-step:nth-child(4) .pixel-char-container {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 1.4s;
+    }
+
+    .levels.in .game-step:nth-child(4) .game-node {
+      border-color: var(--red);
+      background: var(--red);
+      box-shadow: 0 0 15px var(--red);
+      transition-delay: 1.4s;
+    }
+
+    .levels.in .game-step:nth-child(5) .pixel-char-container {
+      opacity: 1;
+      transform: translateY(-10px);
+      transition-delay: 1.8s;
+    }
+
+    .levels.in .game-step:nth-child(5) .game-node {
+      border-color: #00ffff;
+      background: #00ffff;
+      box-shadow: 0 0 25px #00ffff;
+      transition-delay: 1.8s;
+    }
+
+    .levels.in .game-step:nth-child(5) .pixel-char-container svg {
+      animation: float-hero 2s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 12px #00ffff);
+    }
+
+    @keyframes float-hero {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* ---------- cursos ---------- */
+    section {
+      padding: clamp(56px, 9vw, 110px) 0
+    }
+
+    section.tight {
+      padding-top: 0
+    }
+
+    .sec-head {
+      max-width: 60ch;
+      margin-bottom: clamp(36px, 5vw, 60px)
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 26px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s cubic-bezier(.2, .8, .3, 1), box-shadow .3s, border-color .3s;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 3px;
+      width: 0;
+      background: var(--red);
+      transition: width .35s
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 50px -34px rgba(10, 22, 64, .6);
+      border-color: transparent
+    }
+
+    .card:hover::before {
+      width: 100%
+    }
+
+    .card .age {
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: auto
+    }
+
+    .card h3 {
+      margin: 34px 0 10px
+    }
+
+    .card p {
+      font-size: .94rem;
+      color: var(--ink-70)
+    }
+
+    .card .go {
+      margin-top: 20px;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .card .go svg {
+      transition: transform .25s
+    }
+
+    .card:hover .go svg {
+      transform: translateX(4px)
+    }
+
+    /* ---------- por que (COMPARAÇÃO) ---------- */
+    .why-board {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      background: #fff;
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: 0 20px 40px -20px rgba(10, 22, 64, .08);
+      border: 1px solid var(--line);
+    }
+
+    .why-row {
+      display: contents;
+    }
+
+    .why-cell {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+    }
+
+    .why-row:last-child .why-cell {
+      border-bottom: none;
+    }
+
+    .why-left {
+      background: var(--paper);
+      font-weight: 600;
+      font-family: var(--display);
+      font-size: 1.05rem;
+    }
+
+    .why-right {
+      background: #fff;
+    }
+
+    .why-header .why-left {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      background: var(--paper);
+    }
+
+    .why-header .why-right {
+      background: var(--blue-deep);
+      color: #fff;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+    }
+
+    .why-header .why-right svg {
+      height: 28px;
+      width: auto;
+      flex: none;
+    }
+
+    .why-header .why-right span {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-left: 12px;
+    }
+
+    .why-right p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--ink-70);
+    }
+
+    .check-icon {
+      width: 22px;
+      height: 22px;
+      flex: none;
+      background: var(--red);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 18px;
+    }
+
+    .check-icon svg {
+      width: 12px;
+      height: 12px;
+      stroke-width: 3px;
+    }
+
+    /* ---------- passos ---------- */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(18px, 3vw, 40px);
+      counter-reset: s
+    }
+
+    .stepc {
+      counter-increment: s;
+      border-top: 2px solid var(--ink);
+      padding-top: 22px
+    }
+
+    .stepc::before {
+      content: counter(s, decimal-leading-zero);
+      font-family: var(--display);
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--blue-soft);
+      display: block;
+      line-height: 1;
+      margin-bottom: 14px;
+      letter-spacing: -.04em;
+    }
+
+    .stepc h3 {
+      margin-bottom: 10px
+    }
+
+    .stepc p {
+      font-size: .95rem;
+      color: var(--ink-70)
+    }
+
+    /* ---------- depoimentos ---------- */
+    .quotes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px
+    }
+
+    .quote {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 28px 26px
+    }
+
+    .quote p {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -.01em
+    }
+
+    .quote footer {
+      margin-top: 22px;
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gray)
+    }
+
+    .stars {
+      color: var(--red);
+      font-size: .9rem;
+      letter-spacing: 2px;
+      margin-bottom: 16px
+    }
+
+    /* ---------- cta final ---------- */
+    .final {
+      background: var(--blue-deep);
+      color: #fff;
+      border-radius: var(--r);
+      padding: clamp(40px, 6vw, 80px);
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .final h2 {
+      max-width: 18ch;
+      margin: 0 auto 18px
+    }
+
+    .final p {
+      margin: 0 auto;
+      color: rgba(255, 255, 255, .75)
+    }
+
+    .final .cta-row {
+      justify-content: center
+    }
+
+    .final .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255, 255, 255, .35)
+    }
+
+    .final .btn-ghost:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, .08)
+    }
+
+    /* ---------- contato ---------- */
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: clamp(24px, 4vw, 56px);
+      align-items: start
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 26px
+    }
+
+    .info div b {
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gray);
+      display: block;
+      margin-bottom: 6px
+    }
+
+    .info div p {
+      font-size: 1.02rem;
+      font-weight: 500
+    }
+
+    .map {
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      aspect-ratio: 16/10;
+      background: var(--blue-soft)
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block
+    }
+
+    /* ---------- footer ---------- */
+    footer.site {
+      background: var(--ink);
+      color: rgba(255, 255, 255, .6);
+      padding: 56px 0 32px;
+      margin-top: clamp(56px, 8vw, 100px)
+    }
+
+    .fgrid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: space-between;
+      align-items: flex-start
+    }
+
+    footer.site .brand b,
+    footer.site .brand span {
+      color: #fff
+    }
+
+    footer.site .brand span {
+      color: rgba(255, 255, 255, .5)
+    }
+
+    .fnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: .9rem
+    }
+
+    .fnav a:hover {
+      color: #fff
+    }
+
+    .fbot {
+      margin-top: 44px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: space-between;
+      font-size: .8rem;
+      font-family: var(--mono);
+      letter-spacing: .06em
+    }
+
+    /* ---------- whatsapp flutuante ---------- */
+    .wa {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 70;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 14px 30px -12px rgba(37, 211, 102, .9);
+      transition: transform .2s
+    }
+
+    .wa:hover {
+      transform: scale(1.07)
+    }
+
+    /* ---------- reveal ---------- */
+    .rv {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s cubic-bezier(.2, .8, .3, 1), transform .7s cubic-bezier(.2, .8, .3, 1)
+    }
+
+    .rv.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .swap {
+      transition: opacity .25s
+    }
+
+    .swapping .swap {
+      opacity: 0
+    }
+
+    /* ---------- responsivo ---------- */
+    @media(max-width:1000px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 44px
+      }
+
+      .frame {
+        max-width: 460px
+      }
+
+      .contact {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:760px) {
+      nav {
+        position: fixed;
+        inset: 76px 0 auto;
+        background: var(--paper);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 8px var(--pad) 24px;
+        border-bottom: 1px solid var(--line);
+        transform: translateY(-120%);
+        transition: transform .35s cubic-bezier(.2, .8, .3, 1);
+        margin-left: 0
+      }
+
+      nav.open {
+        transform: none
+      }
+
+      nav a {
+        padding: 14px 0;
+        width: 100%;
+        border-bottom: 1px solid var(--line);
+        font-size: 1rem
+      }
+
+      nav .btn {
+        margin-top: 16px
+      }
+
+      .burger {
+        display: block;
+        margin-left: auto
+      }
+
+      .lang {
+        order: 2
+      }
+
+      .steps,
+      .quotes {
+        grid-template-columns: 1fr
+      }
+
+      /* Ajuste do Why Board Mobile */
+      .why-board {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .why-header {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .why-header .why-left {
+        display: none;
+      }
+
+      .why-header .why-right {
+        justify-content: center;
+      }
+
+      .why-row {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 4px solid var(--paper);
+      }
+
+      .why-cell {
+        border-bottom: none !important;
+      }
+
+      .why-left {
+        padding: 24px 24px 8px;
+        font-size: 1.2rem;
+      }
+
+      .why-right {
+        padding: 0 24px 24px;
+      }
+
+      .trust {
+        gap: 20px
+      }
+
+      .trust div {
+        min-width: 44%
+      }
+
+      /* Ajuste do Gamified Progress Map Mobile */
+      .progress-map {
+        flex-direction: column;
+        margin-top: 40px;
+        gap: 40px;
+      }
+
+      .progress-track {
+        top: 0;
+        bottom: 0;
+        left: 30px;
+        width: 6px;
+        height: 100%;
+        right: auto;
+      }
+
+      .progress-fill {
+        top: 0;
+        left: 30px;
+        width: 6px;
+        height: 0%;
+        transition: height 2s cubic-bezier(.2, .8, .3, 1);
+      }
+
+      .levels.in .progress-fill {
+        height: 100%;
+        width: 6px;
+      }
+
+      .game-step {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+      }
+
+      .game-node {
+        position: absolute;
+        left: 23px;
+        margin: 0;
+      }
+
+      .pixel-char-container {
+        margin-bottom: 0;
+        margin-left: 56px;
+        margin-right: 16px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .text-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition-duration: .01ms !important
+      }
+
+      .rv {
+        opacity: 1;
+        transform: none
+      }
+
+      .levels .progress-fill {
+        width: 100%
+      }
+
+      h1 .rot i {
+        position: static
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="hd">
+    <div class="wrap bar">
+      <a href="#top" class="brand" aria-label="CCI Marília — início">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="#12256F" />
+          <path d="M20 1a19 19 0 000 38z" fill="#1B3BD8" />
+          <circle cx="20" cy="20" r="11" fill="#fff" />
+          <circle cx="20" cy="20" r="7" fill="#E11D34" />
+        </svg>
+        <span style="display:block">
+          <b>CCI</b>
+          <span data-pt="Marília · desde 1984" data-en="Marília · since 1984">Marília · desde 1984</span>
+        </span>
+      </a>
+
+      <nav id="nav">
+        <a href="#cursos" class="swap" data-pt="Cursos" data-en="Courses">Cursos</a>
+        <a href="#metodo" class="swap" data-pt="O método" data-en="Our method">O método</a>
+        <a href="https://wa.me/5514998595736" class="swap" data-pt="Matrícula" data-en="Enroll">Matrícula</a>
+        <a href="#contato" class="swap" data-pt="Contato" data-en="Contact">Contato</a>
+        <a href="#" class="swap" data-pt="Área do aluno" data-en="Student area">Área do aluno</a>
+        <a href="https://wa.me/5514998595736" class="btn btn-primary btn-sm swap" data-pt="Aula experimental"
+          data-en="Free trial class">Aula experimental</a>
+      </nav>
+
+      <div class="lang" role="group" aria-label="Idioma do site">
+        <button id="bt-pt" aria-pressed="true">PT</button>
+        <button id="bt-en" aria-pressed="false">EN</button>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="pill-badge swap" data-pt="Desde 1984" data-en="Since 1984">Desde 1984</div>
+          <h1 style="display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline;">
+            <span class="swap" data-pt="Aqui, seu inglês vira" data-en="Here, your English becomes">Aqui, seu inglês
+              vira</span>
+            <span class="rot" id="rot" aria-live="polite"></span>
+          </h1>
+          <p class="lead swap"
+            data-pt="Mais de 40 anos formando alunos em Marília. Turmas pequenas, professores que acompanham cada aluno de perto e aulas em que se fala inglês desde o primeiro dia."
+            data-en="More than 40 years teaching in Marília. Small groups, teachers who know every student by name, and classes where you speak English from day one.">
+            Mais de 40 anos formando alunos em Marília. Turmas pequenas, professores que acompanham cada aluno de perto
+            e aulas em que se fala inglês desde o primeiro dia.
+          </p>
+          <div class="cta-row">
+            <a href="https://wa.me/5514998595736" class="btn btn-primary btn-anim-border swap"
+              data-pt="Agendar aula experimental" data-en="Book a free trial class">Agendar aula experimental</a>
+            <a href="#nivel" class="btn btn-ghost swap" data-pt="Descobrir meu nível" data-en="Find my level">Descobrir
+              meu nível</a>
+          </div>
+          <div class="trust">
+            <div><b>40+</b><small class="swap" data-pt="anos em Marília" data-en="years in Marília">anos em
+                Marília</small></div>
+            <div><b>4,6 ★</b><small class="swap" data-pt="21 avaliações no Google" data-en="21 Google reviews">21
+                avaliações no Google</small></div>
+            <div><b>4</b><small class="swap" data-pt="trilhas de ensino" data-en="learning tracks">trilhas de
+                ensino</small></div>
+          </div>
+        </div>
+
+        <div class="frame">
+          <div class="shot">
+            <!-- Troque por foto real da escola: <img src="foto-sala.jpg" alt="Aula no CCI Marília"> -->
+            <span class="swap" data-pt="foto — sala de aula CCI" data-en="photo — CCI classroom">foto — sala de aula
+              CCI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NÍVEL GAMIFICADO -->
+    <div class="wrap" id="nivel">
+      <div class="sec-head rv"
+        style="text-align: center; margin: 0 auto clamp(36px,5vw,60px); display: flex; flex-direction: column; align-items: center;">
+        <p class="eyebrow swap" style="justify-content:center; color: var(--red);" data-pt="A jornada"
+          data-en="Your journey">Sua
+          jornada</p>
+        <h2 class="swap" data-pt="Onde está hoje ?" data-en="Where are you today ?">Onde está hoje ?</h2>
+      </div>
+      <div class="levels rv" id="lv">
+        <div class="progress-map">
+          <div class="progress-track"></div>
+          <div class="progress-fill"></div>
+
+          <!-- A1 -->
+          <div class="game-step">
+            <div class="pixel-char-container" id="char-1"></div>
+            <div class="game-node"></div>
+            <div class="text-content">
+              <b>A1</b>
+              <small class="swap" data-pt="Primeiras frases e apresentações"
+                data-en="First phrases and introductions">Primeiras frases e apresentações</small>
+            </div>
+          </div>
+
+          <!-- A2 -->
+          <div class="game-step">
+            <div class="pixel-char-container" id="char-2"></div>
+            <div class="game-node"></div>
+            <div class="text-content">
+              <b>A2</b>
+              <small class="swap" data-pt="Conversas do dia a dia" data-en="Everyday conversation">Conversas do dia a
+                dia</small>
+            </div>
+          </div>
+
+          <!-- B1 -->
+          <div class="game-step">
+            <div class="pixel-char-container" id="char-3"></div>
+            <div class="game-node"></div>
+            <div class="text-content">
+              <b>B1</b>
+              <small class="swap" data-pt="Viagem, estudo e trabalho" data-en="Travel, study and work">Viagem, estudo e
+                trabalho</small>
+            </div>
+          </div>
+
+          <!-- B2 -->
+          <div class="game-step">
+            <div class="pixel-char-container" id="char-4"></div>
+            <div class="game-node"></div>
+            <div class="text-content">
+              <b>B2</b>
+              <small class="swap" data-pt="Argumentar e defender ideias"
+                data-en="Arguing and defending ideas">Argumentar e defender ideias</small>
+            </div>
+          </div>
+
+          <!-- C1 -->
+          <div class="game-step">
+            <div class="pixel-char-container" id="char-5"></div>
+            <div class="game-node" style="border-color: #00ffff; box-shadow: 0 0 10px #00ffff;"></div>
+            <div class="text-content">
+              <b>C1</b>
+              <small class="swap" data-pt="Fluência em contexto técnico"
+                data-en="Fluency in technical settings">Fluência em contexto técnico</small>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+          <a href="https://wa.me/5514998595736" class="btn btn-primary btn-anim-border swap"
+            data-pt="Fazer o teste de nível · 5 min" data-en="Take the level test · 5 min">Fazer o teste de nível · 5
+            min</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CURSOS -->
+    <section id="cursos" class="tight">
+      <div class="wrap">
+        <div class="sec-head rv" style="text-align: center; margin-bottom: 48px;">
+          <p class="eyebrow swap" style="justify-content:center" data-pt="Cursos" data-en="Courses">Cursos</p>
+          <h2 class="swap" data-pt="Cursos CCI" data-en="CCI Courses">Cursos CCI</h2>
+          <p class="lead swap" style="margin-top:16px; margin-left:auto; margin-right:auto;"
+            data-pt="Cada faixa tem material, ritmo e objetivo próprios — mas todas seguem o mesmo princípio: falar mais do que traduzir."
+            data-en="Each track has its own materials, pace and goals — all built on the same principle: speak more than you translate.">
+            Cada faixa tem material, ritmo e objetivo próprios — mas todas seguem o mesmo princípio: falar mais do que
+            traduzir.
+          </p>
+        </div>
+
+        <div class="cards">
+          <!-- Crianças -->
+          <div class="card rv"
+            style="padding: 0; overflow: hidden; display: flex; flex-direction: column; cursor: default;">
+            <div style="position: relative; width: 100%; aspect-ratio: 4/3; background: #e9ecef;">
+              <!-- Substitua o <p> abaixo por uma <img> oficial -->
+              <p
+                style="text-align: center; margin: 0; position: absolute; top: 40%; left: 0; right: 0; color: #adb5bd; font-weight: 500;">
+                [ Foto Crianças ]</p>
+              <div
+                style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.65); padding: 12px 16px; text-align: center; color: #fff; font-weight: 700; font-size: 1.05rem;">
+                Crianças 3-9 anos
+              </div>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <a href="https://wa.me/5514998595736" class="btn btn-primary"
+                style="justify-content: center; margin-bottom: 24px; padding: 12px; background: var(--red); color: white; border-radius: 6px; border: none; font-weight: 600;">
+                Saiba mais!
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="margin-left: 4px;">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <h3 style="margin-bottom: 20px; font-size: 1.05rem; line-height: 1.4; min-height: 44px;">Aprendizado leve
+                e divertido para seu filho</h3>
+              <ul
+                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem; color: var(--ink-70);">
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Aulas presenciais ou ao vivo online</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Aprender inglês explorando temas que eles amam como ciência e arte</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Desenvolvimento emocional para os pequenos construírem autonomia</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Estímulo à criatividade e autoconfiança desde os primeiros passos</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Adolescentes -->
+          <div class="card rv"
+            style="padding: 0; overflow: hidden; display: flex; flex-direction: column; cursor: default;">
+            <div style="position: relative; width: 100%; aspect-ratio: 4/3; background: #e9ecef;">
+              <!-- Substitua o <p> abaixo por uma <img> oficial -->
+              <p
+                style="text-align: center; margin: 0; position: absolute; top: 40%; left: 0; right: 0; color: #adb5bd; font-weight: 500;">
+                [ Foto Adolescentes ]</p>
+              <div
+                style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.65); padding: 12px 16px; text-align: center; color: #fff; font-weight: 700; font-size: 1.05rem;">
+                Adolescentes 10-17 anos
+              </div>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <a href="https://wa.me/5514998595736" class="btn btn-primary"
+                style="justify-content: center; margin-bottom: 24px; padding: 12px; background: var(--red); color: white; border-radius: 6px; border: none; font-weight: 600;">
+                Saiba mais!
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="margin-left: 4px;">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <h3 style="margin-bottom: 20px; font-size: 1.05rem; line-height: 1.4; min-height: 44px;">Inglês que
+                conecta seu filho com o mundo e com o futuro</h3>
+              <ul
+                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem; color: var(--ink-70);">
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Aulas presenciais ou ao vivo online</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Seu filho arrasando na solução de problemas e construção de projetos</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Desenvolvimento da autonomia e pensamento crítico</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Inglês com uso consciente de tecnologia e inteligência artificial</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Adultos -->
+          <div class="card rv"
+            style="padding: 0; overflow: hidden; display: flex; flex-direction: column; cursor: default;">
+            <div style="position: relative; width: 100%; aspect-ratio: 4/3; background: #e9ecef;">
+              <!-- Substitua o <p> abaixo por uma <img> oficial -->
+              <p
+                style="text-align: center; margin: 0; position: absolute; top: 40%; left: 0; right: 0; color: #adb5bd; font-weight: 500;">
+                [ Foto Adultos ]</p>
+              <div
+                style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.65); padding: 12px 16px; text-align: center; color: #fff; font-weight: 700; font-size: 1.05rem;">
+                Adultos 18 anos ou mais
+              </div>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <a href="https://wa.me/5514998595736" class="btn btn-primary"
+                style="justify-content: center; margin-bottom: 24px; padding: 12px; background: var(--red); color: white; border-radius: 6px; border: none; font-weight: 600;">
+                Saiba mais!
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="margin-left: 4px;">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <h3 style="margin-bottom: 20px; font-size: 1.05rem; line-height: 1.4; min-height: 44px;">Inglês que
+                acompanha suas metas profissionais e pessoais</h3>
+              <ul
+                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem; color: var(--ink-70);">
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Aulas presenciais ou ao vivo online</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Conversação com foco em resultados rápidos e reais</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Desenvolvimento de habilidades em inglês para o mercado de trabalho</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Liderança e pensamento crítico para você se destacar profissionalmente</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- VIP Personal -->
+          <div class="card rv"
+            style="padding: 0; overflow: hidden; display: flex; flex-direction: column; cursor: default;">
+            <div style="position: relative; width: 100%; aspect-ratio: 4/3; background: #e9ecef;">
+              <!-- Substitua o <p> abaixo por uma <img> oficial -->
+              <p
+                style="text-align: center; margin: 0; position: absolute; top: 40%; left: 0; right: 0; color: #adb5bd; font-weight: 500;">
+                [ Foto VIP ]</p>
+              <div
+                style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.65); padding: 12px 16px; text-align: center; color: #fff; font-weight: 700; font-size: 1.05rem;">
+                VIP Individual
+              </div>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <a href="https://wa.me/5514998595736" class="btn btn-primary"
+                style="justify-content: center; margin-bottom: 24px; padding: 12px; background: var(--red); color: white; border-radius: 6px; border: none; font-weight: 600;">
+                Saiba mais!
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="margin-left: 4px;">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <h3 style="margin-bottom: 20px; font-size: 1.05rem; line-height: 1.4; min-height: 44px;">Acelere seus
+                resultados com um plano focado 100% em você</h3>
+              <ul
+                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem; color: var(--ink-70);">
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Aulas um a um no seu ritmo</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Foco total nas suas necessidades e prazos</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Flexibilidade total de horários na sua rotina</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"
+                    style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l3 3 5-5" />
+                  </svg>
+                  <span>Acompanhamento personalizado e evolução acelerada</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO (COMPARAÇÃO LADO A LADO) -->
+    <section id="metodo">
+      <div class="wrap">
+        <div class="sec-head rv"
+          style="text-align: center; margin: 0 auto clamp(36px,5vw,60px); display: flex; flex-direction: column; align-items: center;">
+          <p class="eyebrow swap" style="justify-content:center" data-pt="Faça uma escolha consciente!"
+            data-en="Make an informed choice!">Faça uma escolha consciente!</p>
+          <h2 class="swap" data-pt="Por que escolher o <em>CCI Marília</em> para aprender inglês?"
+            data-en="Why choose <em>CCI Marília</em> to learn English?">Por que escolher o <em>CCI Marília</em> para
+            aprender inglês?</h2>
+        </div>
+
+        <div class="why-board rv">
+          <div class="why-row why-header">
+            <div class="why-cell why-left swap" data-pt="O que entregamos" data-en="What we deliver">O que entregamos
+            </div>
+            <div class="why-cell why-right">
+              <svg viewBox="0 0 40 40" aria-hidden="true">
+                <circle cx="20" cy="20" r="19" fill="#1B3BD8" />
+                <path d="M20 1a19 19 0 000 38z" fill="#fff" />
+                <circle cx="20" cy="20" r="11" fill="#fff" />
+                <circle cx="20" cy="20" r="7" fill="#E11D34" />
+              </svg>
+              <span style="color:#fff">CCI Marília</span>
+            </div>
+          </div>
+
+          <div class="why-row">
+            <div class="why-cell why-left swap" data-pt="Turmas pequenas" data-en="Small groups">Turmas pequenas</div>
+            <div class="why-cell why-right">
+              <div class="check-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path d="M2 7l3.5 3.5L12 3" />
+                </svg></div>
+              <p class="swap"
+                data-pt="Poucos alunos por sala significa mais tempo de fala para cada um. Ninguém passa a aula ouvindo os outros praticarem."
+                data-en="Fewer students per room means more speaking time each. Nobody spends the class listening to other people practise.">
+                Poucos alunos por sala significa mais tempo de fala para cada um. Ninguém passa a aula ouvindo os outros
+                praticarem.</p>
+            </div>
+          </div>
+
+          <div class="why-row">
+            <div class="why-cell why-left swap" data-pt="Professores que ficam" data-en="Teachers who stay">Professores
+              que ficam</div>
+            <div class="why-cell why-right">
+              <div class="check-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path d="M2 7l3.5 3.5L12 3" />
+                </svg></div>
+              <p class="swap"
+                data-pt="Um corpo docente que acompanha o aluno por vários módulos — e percebe rápido quando algo trava no caminho."
+                data-en="A teaching team that follows students across modules — and spots quickly when something gets stuck.">
+                Um corpo docente que acompanha o aluno por vários módulos — e percebe rápido quando algo trava no
+                caminho.</p>
+            </div>
+          </div>
+
+          <div class="why-row">
+            <div class="why-cell why-left swap" data-pt="Avaliação contínua" data-en="Continuous assessment">Avaliação
+              contínua</div>
+            <div class="why-cell why-right">
+              <div class="check-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path d="M2 7l3.5 3.5L12 3" />
+                </svg></div>
+              <p class="swap"
+                data-pt="O nível é revisto ao longo do curso, não só na matrícula. Quem avança mais rápido, avança."
+                data-en="Levels are reviewed throughout the course, not only at enrolment. If you move faster, you move up.">
+                O nível é revisto ao longo do curso, não só na matrícula. Quem avança mais rápido, avança.</p>
+            </div>
+          </div>
+
+          <div class="why-row">
+            <div class="why-cell why-left swap" data-pt="Tradição e Segurança" data-en="Tradition and Security">Tradição
+              e Segurança</div>
+            <div class="why-cell why-right">
+              <div class="check-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path d="M2 7l3.5 3.5L12 3" />
+                </svg></div>
+              <p class="swap"
+                data-pt="Mais de 40 anos na cidade. Gente que estudou aqui hoje traz os próprios filhos. É o tipo de prova que não se compra em anúncio."
+                data-en="Over 40 years in town. People who studied here now bring their own children. That's the kind of proof you can't buy in an ad.">
+                Mais de 40 anos na cidade. Gente que estudou aqui hoje traz os próprios filhos. É o tipo de prova que
+                não se compra em anúncio.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row rv" style="justify-content: center; margin-top: 40px;">
+          <a href="https://wa.me/5514998595736" class="btn btn-primary btn-anim-border swap"
+            data-pt="Matricule-se agora" data-en="Enroll now">Matricule-se agora</a>
+          <a href="https://wa.me/5514998595736" class="btn btn-ghost swap" data-pt="Tire suas dúvidas"
+            data-en="Ask your questions">Tire suas dúvidas</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- DEPOIMENTOS -->
+    <section class="tight">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow swap" data-pt="Quem estuda aqui" data-en="Our students">Quem estuda aqui</p>
+          <h2 class="swap" data-pt="O que falam de nós" data-en="What they say about us">O que falam de nós</h2>
+        </div>
+        <div class="quotes rv">
+          <div class="quote">
+            <div class="stars">★★★★★</div>
+            <p class="swap" data-pt="[depoimento real do aluno aqui]" data-en="[real student review here]">[depoimento
+              real do aluno aqui]</p>
+            <footer>Nome do aluno · Curso</footer>
+          </div>
+          <div class="quote">
+            <div class="stars">★★★★★</div>
+            <p class="swap" data-pt="[depoimento real do responsável aqui]" data-en="[real parent review here]">
+              [depoimento real do responsável aqui]</p>
+            <footer>Nome do responsável · Curso</footer>
+          </div>
+          <div class="quote">
+            <div class="stars">★★★★★</div>
+            <p class="swap" data-pt="[depoimento real do aluno aqui]" data-en="[real student review here]">[depoimento
+              real do aluno aqui]</p>
+            <footer>Nome do aluno · Curso</footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <div class="wrap">
+      <div class="final rv">
+        <p class="eyebrow" style="justify-content:center;color:#8FA3FF">Marília · SP</p>
+        <h2 class="swap" data-pt="A próxima turma começa em breve." data-en="The next group starts soon.">A próxima
+          turma começa em breve.</h2>
+        <p class="swap" data-pt="Fale com a secretaria pelo WhatsApp e reserve sua aula experimental sem compromisso."
+          data-en="Message the office on WhatsApp and book your trial class — no strings attached.">Fale com a
+          secretaria pelo WhatsApp e reserve sua aula experimental sem compromisso.</p>
+        <div class="cta-row">
+          <a href="https://wa.me/5514998595736" class="btn btn-primary swap" data-pt="Chamar no WhatsApp"
+            data-en="Message on WhatsApp">Chamar no WhatsApp</a>
+          <a href="tel:+5514998595736" class="btn btn-ghost">(14) 99859-5736</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow swap" data-pt="Onde estamos" data-en="Find us">Onde estamos</p>
+          <h2 class="swap" data-pt="Jardim Maria Izabel, Marília" data-en="Jardim Maria Izabel, Marília">Jardim Maria
+            Izabel, Marília</h2>
+        </div>
+        <div class="contact rv">
+          <div class="info">
+            <div>
+              <b class="swap" data-pt="Endereço" data-en="Address">Endereço</b>
+              <p>Rua das Turquezas, 251<br>Jardim Maria Izabel — Marília/SP<br>17516-090</p>
+            </div>
+            <div>
+              <b class="swap" data-pt="Telefone e WhatsApp" data-en="Phone and WhatsApp">Telefone e WhatsApp</b>
+              <p><a href="tel:+5514998595736">(14) 99859-5736</a></p>
+            </div>
+            <div>
+              <b class="swap" data-pt="Secretaria" data-en="Office hours">Secretaria</b>
+              <p class="swap" data-pt="Segunda a sexta, 8h às 20h" data-en="Monday to Friday, 8am to 8pm">Segunda a
+                sexta, 8h às 20h</p>
+            </div>
+            <a href="https://maps.google.com/?q=Centro+de+Comunicação+Inglesa+CCI+Marília" class="btn btn-ghost swap"
+              style="align-self:flex-start" data-pt="Traçar rota" data-en="Get directions">Traçar rota</a>
+          </div>
+          <div class="map">
+            <iframe title="Mapa CCI Marília" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=R.%20das%20Turquezas%2C%20251%20-%20Jardim%20Maria%20Izabel%2C%20Mar%C3%ADlia%20-%20SP%2C%2017516-090&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="fgrid">
+        <a href="#top" class="brand">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="#1B3BD8" />
+            <path d="M20 1a19 19 0 000 38z" fill="#12256F" />
+            <circle cx="20" cy="20" r="11" fill="#fff" />
+            <circle cx="20" cy="20" r="7" fill="#E11D34" />
+          </svg>
+          <span style="display:block"><b>CCI</b><span>Centro de Comunicação Inglesa</span></span>
+        </a>
+        <div class="fnav">
+          <a href="#cursos" class="swap" data-pt="Cursos" data-en="Courses">Cursos</a>
+          <a href="#metodo" class="swap" data-pt="O método" data-en="Our method">O método</a>
+          <a href="#" class="swap" data-pt="Área do aluno" data-en="Student area">Área do aluno</a>
+          <a href="#" class="swap" data-pt="Área do professor" data-en="Teacher area">Área do professor</a>
+          <a href="#contato" class="swap" data-pt="Contato" data-en="Contact">Contato</a>
+        </div>
+        <div class="socials" style="display: flex; gap: 16px;">
+          <a href="https://www.instagram.com/ccimarilia/" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://wa.me/5514998595736" target="_blank" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="fbot" style="align-items: center;">
+        <span>© 2026 CCI Marília</span>
+        <span>Rua das Turquezas, 251 · (14) 99859-5736</span>
+        <span style="font-size: 0.7rem; color: rgba(255,255,255,.4);">Desenvolvido por: <strong
+            style="color: rgba(255,255,255,.8); font-weight: 700;">Meraki Assessoria</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/5514998595736" aria-label="Falar no WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff">
+      <path
+        d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2" />
+    </svg>
+  </a>
+
+  <script>
+    (function () {
+      /* ---------- header sticky ---------- */
+      var hd = document.getElementById('hd');
+      addEventListener('scroll', function () { hd.classList.toggle('stuck', scrollY > 10) }, { passive: true });
+
+      /* ---------- menu mobile ---------- */
+      var b = document.getElementById('burger'), nv = document.getElementById('nav');
+      b.addEventListener('click', function () {
+        var o = nv.classList.toggle('open');
+        b.setAttribute('aria-expanded', o);
+      });
+      nv.addEventListener('click', function (e) { if (e.target.tagName === 'A') nv.classList.remove('open') });
+
+      /* ---------- rotação da palavra ---------- */
+      var words = {
+        pt: ['conversa.', 'trabalho.', 'intercâmbio.', 'futuro.'],
+        en: ['conversation.', 'work.', 'travel.', 'a future.']
+      };
+      var rot = document.getElementById('rot'), idx = 0, lang = 'pt';
+      function buildRot() {
+        rot.innerHTML = '';
+        words[lang].forEach(function (w, i) {
+          var el = document.createElement('i'); el.textContent = w;
+          if (i === idx) el.className = 'on';
+          rot.appendChild(el);
+        });
+      }
+      buildRot();
+      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduce) {
+        setInterval(function () {
+          var items = rot.children;
+          items[idx].classList.remove('on');
+          idx = (idx + 1) % items.length;
+          items[idx].classList.add('on');
+        }, 2600);
+      }
+
+      /* ---------- alternância PT / EN ---------- */
+      var pt = document.getElementById('bt-pt'), en = document.getElementById('bt-en');
+      function setLang(l) {
+        if (l === lang) return;
+        lang = l;
+        document.body.classList.add('swapping');
+        pt.setAttribute('aria-pressed', l === 'pt');
+        en.setAttribute('aria-pressed', l === 'en');
+        setTimeout(function () {
+          document.querySelectorAll('[data-' + l + ']').forEach(function (el) {
+            el.textContent = el.getAttribute('data-' + l);
+          });
+          document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+          buildRot();
+          document.body.classList.remove('swapping');
+        }, 240);
+      }
+      pt.addEventListener('click', function () { setLang('pt') });
+      en.addEventListener('click', function () { setLang('en') });
+
+      /* ---------- 3D VECTOR EVOLUTION (ROCKETS) ---------- */
+      const svgDefs = `
+<defs>
+  <filter id="drop-shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+  </filter>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <linearGradient id="flame" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#FFD700"/>
+    <stop offset="100%" stop-color="#E11D34"/>
+  </linearGradient>
+  <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#F8F9FA"/>
+    <stop offset="100%" stop-color="#CED4DA"/>
+  </linearGradient>
+  <linearGradient id="space-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#339AF0"/>
+    <stop offset="100%" stop-color="#1B3BD8"/>
+  </linearGradient>
+</defs>
+  `;
+
+      function draw3DChar(level) {
+        let content = '';
+        if (level === 1) {
+          content = '<g transform="translate(15, 25) rotate(15) scale(0.7)" filter="url(#drop-shadow)"><path d="M10,80 L40,10 L90,60 L60,90 Z" fill="#E9ECEF"/><path d="M40,10 L60,90 L90,60 Z" fill="#DEE2E6"/><path d="M40,10 L10,80 L40,70 Z" fill="#CED4DA"/></g>';
+        } else if (level === 2) {
+          content = '<g transform="translate(20, 15) rotate(25) scale(0.7)" filter="url(#drop-shadow)"><path d="M30,90 L50,110 L70,90 Z" fill="url(#flame)"/><path d="M20,70 L50,10 L80,70 L70,90 L30,90 Z" fill="url(#silver)"/><path d="M20,70 L10,90 L30,85 Z" fill="#E11D34"/><path d="M80,70 L90,90 L70,85 Z" fill="#E11D34"/><circle cx="50" cy="50" r="10" fill="#1B3BD8"/><circle cx="50" cy="50" r="8" fill="#8CE9FF"/></g>';
+        } else if (level === 3) {
+          content = '<g transform="translate(20, 5) rotate(35) scale(0.7)" filter="url(#drop-shadow)"><path d="M40,95 L50,120 L60,95 Z" fill="url(#flame)"/><path d="M35,40 Q50,0 65,40 L65,95 L35,95 Z" fill="url(#silver)"/><rect x="35" y="60" width="30" height="15" fill="#1B3BD8"/><path d="M35,80 L20,105 L35,95 Z" fill="#343A40"/><path d="M65,80 L80,105 L65,95 Z" fill="#343A40"/></g>';
+        } else if (level === 4) {
+          content = '<g transform="translate(20, 5) rotate(45) scale(0.8)" filter="url(#drop-shadow)"><path d="M35,85 L50,120 L65,85 Z" fill="url(#flame)"/><path d="M20,60 L50,10 L80,60 L65,85 L35,85 Z" fill="url(#silver)"/><path d="M50,10 L20,60 L35,85 L50,60 Z" fill="#F8F9FA"/><path d="M5,70 L25,50 L25,75 Z" fill="url(#space-grad)"/><path d="M95,70 L75,50 L75,75 Z" fill="url(#space-grad)"/><path d="M40,40 Q50,30 60,40 L55,55 L45,55 Z" fill="#1B3BD8"/></g>';
+        } else if (level === 5) {
+          content = '<g transform="translate(10, 10) scale(0.8)" filter="url(#drop-shadow)"><circle cx="50" cy="50" r="30" fill="url(#space-grad)" filter="url(#glow)"/><ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="#00FFFF" stroke-width="4" transform="rotate(20 50 50)" filter="url(#glow)"/><ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="#00FFFF" stroke-width="4" transform="rotate(-20 50 50)" filter="url(#glow)"/><circle cx="50" cy="50" r="15" fill="#FFFFFF"/><circle cx="50" cy="50" r="10" fill="#00FFFF" filter="url(#glow)"/></g>';
+        }
+        return '<svg viewBox="0 0 100 100" style="width:100%; height:100%; overflow:visible;">' + svgDefs + content + '</svg>';
+      }
+
+      for (let i = 1; i <= 5; i++) {
+        document.getElementById('char-' + i).innerHTML = draw3DChar(i);
+      }
+
+      /* ---------- reveal no scroll ---------- */
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } });
+      }, { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.rv').forEach(function (el) { io.observe(el) });
+    })();
+  </script>
+</body>
+
+</html>
