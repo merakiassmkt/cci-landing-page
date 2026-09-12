@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste de Nível de Inglês — CCI Marília (Versão Duolingo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DUOLINGO DESIGN SYSTEM & CCI BRAND TOKENS
+   ============================================================ */
+:root {
+  /* Duolingo Vibrant Colors */
+  --duo-green: #58cc02;
+  --duo-green-shadow: #58a700;
+  --duo-green-light: #d7ffb8;
+  
+  --duo-blue: #1cb0f6;
+  --duo-blue-shadow: #1899d6;
+  --duo-blue-light: #ddf4ff;
+
+  /* CCI Marília Brand Identity */
+  --duo-cci-blue: #1b365d;
+  --duo-cci-blue-shadow: #10223b;
+  --duo-cci-blue-light: #e8eef8;
+
+  --duo-red: #d92635;
+  --duo-red-shadow: #ad1522;
+  --duo-red-light: #ffdfe0;
+
+  --duo-yellow: #ffc800;
+  --duo-yellow-shadow: #e5a500;
+  --duo-yellow-light: #fff7d6;
+
+  /* Neutrals */
+  --duo-gray: #e5e5e5;
+  --duo-gray-shadow: #cecece;
+  --duo-gray-light: #f7f9fa;
+  --duo-text: #4b4b4b;
+  --duo-text-dark: #202b33;
+  --duo-text-muted: #777777;
+  --duo-border: #e5e5e5;
+  --duo-bg-card: #ffffff;
+  --duo-bg-page: #ffffff;
+
+  /* Fonts */
+  --font-main: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* Dimensions */
+  --max-width: 680px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--duo-bg-page);
+  color: var(--duo-text);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* ============================================================
+   CONTAINER & LAYOUT
+   ============================================================ */
+.shell {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Cabeçalho Duolingo */
+.masthead {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--duo-border);
+  margin-bottom: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.masthead-badge {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--duo-cci-blue);
+  background: var(--duo-cci-blue-light);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(27, 54, 93, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Telas */
+.screen {
+  display: none;
+  animation: duoFade 0.25s ease-out;
+}
+
+.screen.on {
+  display: block;
+}
+
+@keyframes duoFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   BOTÕES 3D DO DUOLINGO ("CHUNKY BUTTONS")
+   ============================================================ */
+.btn-duo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 16px 28px;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  user-select: none;
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+}
+
+/* Verde Clássico Duolingo (Avançar/Confirmar) */
+.btn-duo-green {
+  background: var(--duo-green);
+  color: #ffffff;
+  border-color: var(--duo-green);
+  border-bottom: 5px solid var(--duo-green-shadow);
+}
+.btn-duo-green:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+.btn-duo-green:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+}
+
+/* Azul CCI Marília */
+.btn-duo-blue {
+  background: var(--duo-cci-blue);
+  color: #ffffff;
+  border-color: var(--duo-cci-blue);
+  border-bottom: 5px solid var(--duo-cci-blue-shadow);
+}
+.btn-duo-blue:hover:not(:disabled) {
+  filter: brightness(1.15);
+}
+.btn-duo-blue:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+}
+
+/* Vermelho Destaque */
+.btn-duo-red {
+  background: var(--duo-red);
+  color: #ffffff;
+  border-color: var(--duo-red);
+  border-bottom: 5px solid var(--duo-red-shadow);
+}
+.btn-duo-red:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.btn-duo-red:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+}
+
+/* Amarelo Ouro (Dicas e Alertas) */
+.btn-duo-yellow {
+  background: var(--duo-yellow);
+  color: #533f03;
+  border-color: var(--duo-yellow);
+  border-bottom: 5px solid var(--duo-yellow-shadow);
+}
+.btn-duo-yellow:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+.btn-duo-yellow:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+}
+
+/* Outline / Branco 3D */
+.btn-duo-outline {
+  background: #ffffff;
+  color: var(--duo-cci-blue);
+  border: 2px solid var(--duo-border);
+  border-bottom: 5px solid var(--duo-gray-shadow);
+}
+.btn-duo-outline:hover:not(:disabled) {
+  background: var(--duo-gray-light);
+}
+.btn-duo-outline:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+}
+
+/* Estado Desabilitado */
+.btn-duo:disabled {
+  background: var(--duo-gray) !important;
+  color: #a0a0a0 !important;
+  border-color: var(--duo-gray) !important;
+  border-bottom: 5px solid var(--duo-gray-shadow) !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* ============================================================
+   TELA 1: ABERTURA (HERO DUOLINGO)
+   ============================================================ */
+.intro-hero {
+  text-align: center;
+  padding: 16px 0 24px;
+}
+
+.intro-mascot-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  background: linear-gradient(135deg, var(--duo-blue-light) 0%, #ffffff 100%);
+  border: 3px solid var(--duo-blue);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(28, 176, 246, 0.2);
+  animation: duoFloat 3s ease-in-out infinite;
+}
+
+@keyframes duoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.intro-hero h1 {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--duo-text-dark);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.intro-hero h1 span {
+  color: var(--duo-red);
+}
+
+.intro-hero p {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--duo-text-muted);
+  max-width: 520px;
+  margin: 0 auto 28px;
+}
+
+/* Grid de Especificações */
+.duo-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.duo-stat-card {
+  background: #ffffff;
+  border: 2px solid var(--duo-border);
+  border-bottom: 4px solid var(--duo-border);
+  border-radius: var(--radius-md);
+  padding: 14px 8px;
+  text-align: center;
+}
+
+.duo-stat-val {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--duo-cci-blue);
+}
+
+.duo-stat-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--duo-text-muted);
+  margin-top: 2px;
+}
+
+/* Campos de Formulário Duolingo */
+.duo-form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.duo-form-group label {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--duo-text-dark);
+  margin-bottom: 8px;
+}
+
+.duo-input {
+  width: 100%;
+  font-family: var(--font-main);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--duo-text-dark);
+  background: var(--duo-gray-light);
+  border: 2px solid var(--duo-border);
+  border-bottom: 4px solid var(--duo-border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.duo-input:focus {
+  background: #ffffff;
+  border-color: var(--duo-blue);
+  border-bottom-color: var(--duo-blue-shadow);
+}
+
+.duo-form-group.invalid .duo-input {
+  border-color: var(--duo-red);
+  border-bottom-color: var(--duo-red-shadow);
+  background: #fff8f8;
+}
+
+.duo-form-group .err {
+  display: none;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--duo-red);
+  margin-top: 6px;
+}
+
+.duo-form-group.invalid .err {
+  display: block;
+}
+
+/* ============================================================
+   TELA 2: QUIZ (LIÇÃO DUOLINGO)
+   ============================================================ */
+#scr-quiz {
+  padding-bottom: 120px;
+}
+
+/* Barra Superior de Lição */
+.duo-lesson-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-top: 6px;
+}
+
+.duo-chip {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--duo-cci-blue-light);
+  color: var(--duo-cci-blue);
+  border: 2px solid rgba(27, 54, 93, 0.12);
+  white-space: nowrap;
+}
+
+/* Barra de Progresso Arredondada com Brilho */
+.duo-progress-track {
+  flex: 1;
+  height: 16px;
+  background: var(--duo-gray);
+  border-radius: var(--radius-pill);
+  position: relative;
+  overflow: hidden;
+}
+
+.duo-progress-fill {
+  height: 100%;
+  width: 5%;
+  background: var(--duo-green);
+  border-radius: var(--radius-pill);
+  position: relative;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.duo-progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  right: 6px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: var(--radius-pill);
+}
+
+.duo-clock {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--duo-text-muted);
+  background: var(--duo-gray-light);
+  border: 2px solid var(--duo-border);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.duo-clock.urgent {
+  color: var(--duo-red);
+  border-color: var(--duo-red);
+  background: var(--duo-red-light);
+  animation: duoPulse 1s infinite;
+}
+
+@keyframes duoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.duo-count-pill {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--duo-text-dark);
+  white-space: nowrap;
+}
+
+/* Texto de Apoio (Passagem de Leitura) */
+.duo-passage-card {
+  background: var(--duo-gray-light);
+  border: 2px solid var(--duo-border);
+  border-bottom: 4px solid var(--duo-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--duo-text-dark);
+  font-style: italic;
+  position: relative;
+}
+
+.duo-passage-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--duo-cci-blue);
+  margin-bottom: 8px;
+  font-style: normal;
+}
+
+/* Diálogo com Mascote & Speech Bubble */
+.duo-mascot-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.duo-mascot-avatar {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--duo-cci-blue-light) 0%, #ffffff 100%);
+  border: 2px solid var(--duo-cci-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(27, 54, 93, 0.1);
+}
+
+.duo-speech-bubble {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid var(--duo-border);
+  border-bottom: 4px solid var(--duo-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  flex: 1;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--duo-text-dark);
+  line-height: 1.4;
+}
+
+.duo-speech-bubble::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: -9px;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border-left: 2px solid var(--duo-border);
+  border-bottom: 2px solid var(--duo-border);
+  transform: rotate(45deg);
+}
+
+/* Alternativas (Opções) 3D */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  font-family: var(--font-main);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--duo-text-dark);
+  background: #ffffff;
+  border: 2px solid var(--duo-border);
+  border-bottom: 5px solid var(--duo-border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  width: 100%;
+  position: relative;
+  user-select: none;
+}
+
+.option:hover {
+  background: var(--duo-gray-light);
+  border-color: #cbd5e1;
+  border-bottom-color: #94a3b8;
+}
+
+.option:active {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+}
+
+.option.picked {
+  border-color: var(--duo-blue) !important;
+  border-bottom: 5px solid var(--duo-blue-shadow) !important;
+  background: var(--duo-blue-light) !important;
+  color: #0c82bf !important;
+}
+
+.option-key {
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 14px;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--duo-border);
+  border-radius: 10px;
+  background: var(--duo-gray-light);
+  color: var(--duo-text-muted);
+  transition: all 0.12s ease;
+}
+
+.option.picked .option-key {
+  background: var(--duo-blue);
+  color: #ffffff;
+  border-color: var(--duo-blue-shadow);
+}
+
+/* Container de Digitação (20% das questões) */
+.text-input-container {
+  margin: 20px 0 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.text-input-container input {
+  width: 100%;
+  font-family: var(--font-main);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--duo-text-dark);
+  background: #ffffff;
+  border: 2px solid var(--duo-border);
+  border-bottom: 5px solid var(--duo-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  text-align: center;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.text-input-container input:focus {
+  border-color: var(--duo-blue);
+  border-bottom-color: var(--duo-blue-shadow);
+  background: #ffffff;
+}
+
+.btn-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--duo-yellow);
+  color: #553c03;
+  border: 2px solid var(--duo-yellow);
+  border-bottom: 4px solid var(--duo-yellow-shadow);
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  user-select: none;
+}
+
+.btn-hint:hover {
+  filter: brightness(1.05);
+}
+
+.btn-hint:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+/* Barra Inferior Fixa do Duolingo (Footer Drawer) */
+.duo-fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: 2px solid var(--duo-border);
+  padding: 16px 20px;
+  z-index: 999;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.duo-fixed-footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.duo-footer-hint {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--duo-text-muted);
+}
+
+.duo-fixed-footer-inner .btn-duo {
+  width: auto;
+  min-width: 220px;
+}
+
+/* ============================================================
+   TELA INTERMEDIÁRIA (CELEBRAÇÃO DUOLINGO)
+   ============================================================ */
+.duo-celebration-card {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.duo-streak-icon {
+  width: 90px;
+  height: 90px;
+  background: var(--duo-yellow-light);
+  border: 3px solid var(--duo-yellow);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(255, 200, 0, 0.25);
+  animation: duoBounce 1s infinite alternate;
+}
+
+@keyframes duoBounce {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+.duo-celebration-card h1 {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--duo-text-dark);
+  margin-bottom: 12px;
+}
+
+.duo-celebration-card p {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--duo-text-muted);
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   TELA 3: CAPTURA DE LEAD COM LGPD
+   ============================================================ */
+.duo-card {
+  background: #ffffff;
+  border: 2px solid var(--duo-border);
+  border-bottom: 5px solid var(--duo-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  margin-top: 12px;
+}
+
+.duo-card-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.duo-card-header h1 {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--duo-text-dark);
+  margin-bottom: 8px;
+}
+
+.duo-card-header p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--duo-text-muted);
+}
+
+/* Checkbox LGPD Estilizado */
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--duo-text-muted);
+  line-height: 1.4;
+  margin: 24px 0 28px;
+  cursor: pointer;
+}
+
+.consent input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: var(--duo-green);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   TELA 4: RESULTADO (TROFÉU DUOLINGO)
+   ============================================================ */
+.verdict-duo {
+  text-align: center;
+  padding: 24px 0 32px;
+}
+
+.trophy-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, #ffffff 0%, var(--duo-cci-blue-light) 100%);
+  border: 4px solid var(--duo-cci-blue);
+  border-bottom: 8px solid var(--duo-cci-blue-shadow);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 12px 32px rgba(27, 54, 93, 0.15);
+}
+
+.trophy-code {
+  font-size: 46px;
+  font-weight: 900;
+  color: var(--duo-cci-blue);
+  line-height: 1;
+}
+
+.trophy-name {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--duo-red);
+  margin-top: 4px;
+}
+
+.verdict-score-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--duo-text-dark);
+  background: var(--duo-gray-light);
+  border: 2px solid var(--duo-border);
+  border-radius: var(--radius-pill);
+  padding: 8px 20px;
+  margin-bottom: 28px;
+}
+
+.verdict-score-pill b {
+  color: var(--duo-green);
+  font-size: 20px;
+}
+
+/* Barras de Desempenho */
+.breakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.bd {
+  background: #ffffff;
+  border: 2px solid var(--duo-border);
+  border-bottom: 4px solid var(--duo-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.bd-k {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--duo-text-muted);
+  margin-bottom: 6px;
+}
+
+.bd-v {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--duo-text-dark);
+  margin-bottom: 10px;
+}
+
+.bd-bar {
+  height: 12px;
+  background: var(--duo-gray);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.bd-bar i {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--duo-blue);
+  border-radius: var(--radius-pill);
+  transition: width 1s ease;
+}
+
+.bd-bar.listen i {
+  background: var(--duo-green);
+}
+
+.readout {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--duo-text-dark);
+  background: var(--duo-gray-light);
+  border: 2px solid var(--duo-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+
+.canlist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.canlist li {
+  position: relative;
+  padding-left: 32px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--duo-text);
+  line-height: 1.5;
+}
+
+.canlist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  background: var(--duo-green-light);
+  color: var(--duo-green-shadow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+/* Caixa de CTA com Especialista */
+.cta-box-duo {
+  background: linear-gradient(135deg, var(--duo-cci-blue) 0%, #122543 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  border-bottom: 6px solid var(--duo-cci-blue-shadow);
+  margin-top: 16px;
+}
+
+.cta-box-duo h3 {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.cta-box-duo p {
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.cta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 600px) {
+  .shell {
+    padding: 0 16px 30px;
+  }
+  .intro-hero h1 {
+    font-size: 26px;
+  }
+  .duo-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .breakdown {
+    grid-template-columns: 1fr;
+  }
+  .duo-fixed-footer-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .duo-fixed-footer-inner .btn-duo {
+    width: 100%;
+  }
+  .duo-footer-hint {
+    text-align: center;
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- CABEÇALHO COM LOGO OFICIAL CCI -->
+  <header class="masthead">
+    <div class="brand">
+      <img src="logo-cci.png" alt="CCI Marília">
+    </div>
+    <div class="masthead-badge">
+      <svg style="width: 14px; height: 14px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Teste de Nivelamento
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ TELA 1: ABERTURA (DUOLINGO STYLE) ============ -->
+    <section class="screen on" id="scr-intro">
+      <div class="intro-hero">
+        <div class="intro-mascot-badge">
+          <!-- Mascote Tutor Amigável Estilo Duo -->
+          <svg viewBox="0 0 64 64" style="width: 58px; height: 58px; fill: none;">
+            <circle cx="32" cy="32" r="28" fill="#1cb0f6"/>
+            <!-- Olhos Grandes e Expressivos Duolingo -->
+            <circle cx="23" cy="28" r="9" fill="#ffffff"/>
+            <circle cx="41" cy="28" r="9" fill="#ffffff"/>
+            <circle cx="24" cy="28" r="5" fill="#1b365d"/>
+            <circle cx="40" cy="28" r="5" fill="#1b365d"/>
+            <circle cx="26" cy="26" r="1.8" fill="#ffffff"/>
+            <circle cx="42" cy="26" r="1.8" fill="#ffffff"/>
+            <!-- Bico / Nariz Amigável -->
+            <polygon points="32,34 26,41 38,41" fill="#ffc800"/>
+            <!-- Chapéu de Formatura / Estudante -->
+            <polygon points="32,8 14,16 32,24 50,16" fill="#1b365d"/>
+            <rect x="25" y="21" width="14" height="4" rx="2" fill="#d92635"/>
+          </svg>
+        </div>
+
+        <h1>Descubra seu nível real de <span>inglês</span>!</h1>
+        <p>
+          O teste inteligente da CCI se adapta ao seu ritmo. A cada acerto as perguntas avançam para encontrar exatamente o seu nível CEFR (A1 ao C2).
+        </p>
+
+        <div class="duo-stats-grid">
+          <div class="duo-stat-card">
+            <div class="duo-stat-val">~15 min</div>
+            <div class="duo-stat-label">Duração</div>
+          </div>
+          <div class="duo-stat-card">
+            <div class="duo-stat-val">20</div>
+            <div class="duo-stat-label">Questões</div>
+          </div>
+          <div class="duo-stat-card">
+            <div class="duo-stat-val">A1–C2</div>
+            <div class="duo-stat-label">Escala</div>
+          </div>
+          <div class="duo-stat-card">
+            <div class="duo-stat-val" style="color: var(--duo-green);">100%</div>
+            <div class="duo-stat-label">Gratuito</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="duo-card" style="margin-bottom: 24px;">
+        <div class="duo-form-group" id="f-intro-nome">
+          <label for="i-intro-nome">Como podemos te chamar?</label>
+          <input type="text" class="duo-input" id="i-intro-nome" placeholder="Digite seu primeiro nome" autocomplete="given-name">
+          <div class="err">Por favor, escreva seu nome.</div>
+        </div>
+
+        <div class="duo-form-group" id="f-intro-fone">
+          <label for="i-intro-fone">Qual é o seu WhatsApp?</label>
+          <input type="tel" class="duo-input" id="i-intro-fone" placeholder="(14) 90000-0000" autocomplete="tel" maxlength="16">
+          <div class="err">Informe um número de WhatsApp válido.</div>
+        </div>
+
+        <button class="btn-duo btn-duo-green" id="btn-start" style="margin-top: 10px;">
+          Começar o Teste
+          <svg style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ TELA 2: QUESTÕES (LIÇÃO DUOLINGO) ============ -->
+    <section class="screen" id="scr-quiz">
+      <!-- Barra Superior Estilo Duolingo -->
+      <div class="duo-lesson-header">
+        <span class="duo-chip" id="q-chip">Gramática</span>
+        <div class="duo-progress-track">
+          <div class="duo-progress-fill" id="q-progress"></div>
+        </div>
+        <div class="duo-clock" id="q-clock">60s</div>
+        <div class="duo-count-pill" id="q-count">01 / 20</div>
+      </div>
+
+      <!-- Texto de Leitura (quando aplicável) -->
+      <div id="q-passage" class="duo-passage-card" hidden></div>
+
+      <!-- Mascote com Balão de Diálogo -->
+      <div class="duo-mascot-row">
+        <div class="duo-mascot-avatar">
+          <svg viewBox="0 0 48 48" style="width: 36px; height: 36px;">
+            <circle cx="24" cy="24" r="20" fill="#1cb0f6"/>
+            <circle cx="17" cy="21" r="6.5" fill="#ffffff"/>
+            <circle cx="31" cy="21" r="6.5" fill="#ffffff"/>
+            <circle cx="18" cy="21" r="3.5" fill="#1b365d"/>
+            <circle cx="30" cy="21" r="3.5" fill="#1b365d"/>
+            <polygon points="24,26 19,32 29,32" fill="#ffc800"/>
+          </svg>
+        </div>
+        <div class="duo-speech-bubble" id="q-text">
+          Carregando pergunta...
+        </div>
+      </div>
+
+      <!-- Alternativas de Múltipla Escolha -->
+      <div class="options" id="q-options"></div>
+
+      <!-- Caixa para Questões Dissertativas (20%) -->
+      <div class="text-input-container" id="q-text-input-container" hidden>
+        <input type="text" id="q-text-input" placeholder="Digite sua resposta aqui...">
+        <button type="button" class="btn-hint" id="btn-hint">
+          💡 Revelar 4 opções (-50% pontos)
+        </button>
+      </div>
+
+      <!-- Rodapé Fixo de Ação do Duolingo -->
+      <div class="duo-fixed-footer">
+        <div class="duo-fixed-footer-inner">
+          <span class="duo-footer-hint" id="q-hint">Escolha uma alternativa para continuar.</span>
+          <button class="btn-duo btn-duo-green" id="btn-next" disabled>
+            Verificar
+            <svg style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TELA INTERMEDIÁRIA (CELEBRAÇÃO DUOLINGO) ============ -->
+    <section class="screen" id="scr-intermission">
+      <div class="duo-celebration-card">
+        <div class="duo-streak-icon">
+          🔥
+        </div>
+        <h1 id="intermission-title">Muito bem!</h1>
+        <p id="intermission-text">
+          Você está mandando muito bem. O teste está se adaptando às suas respostas para calibrar o seu nível exato.
+        </p>
+        <button class="btn-duo btn-duo-green" id="btn-intermission-continue" style="max-width: 380px; margin: 0 auto;">
+          Continuar Lição
+          <svg style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ TELA 3: CAPTURA DO LEAD ============ -->
+    <section class="screen" id="scr-form">
+      <div class="duo-card">
+        <div class="duo-card-header">
+          <div style="font-size: 40px; margin-bottom: 12px;">🎉</div>
+          <h1>Teste Concluído!</h1>
+          <p>Seu relatório está pronto. Informe seu e-mail para desbloquear a análise completa com o especialista da CCI.</p>
+        </div>
+
+        <div class="duo-form-group" id="f-nome" hidden>
+          <label for="i-nome">Nome</label>
+          <input type="text" class="duo-input" id="i-nome" autocomplete="name">
+          <div class="err">Escreva seu nome.</div>
+        </div>
+
+        <div class="duo-form-group" id="f-email">
+          <label for="i-email">Qual o seu melhor e-mail?</label>
+          <input type="email" class="duo-input" id="i-email" autocomplete="email" placeholder="exemplo@email.com">
+          <div class="err">Confira o e-mail — parece incompleto.</div>
+        </div>
+
+        <div class="duo-form-group" id="f-fone" hidden>
+          <label for="i-fone">WhatsApp</label>
+          <input type="tel" class="duo-input" id="i-fone" autocomplete="tel">
+          <div class="err">Informe DDD e número.</div>
+        </div>
+
+        <label class="consent" id="l-consent">
+          <input type="checkbox" id="i-consent">
+          <span>Concordo em receber comunicações da CCI Marília e aceito a <u>Política de Privacidade</u>, ciente de que posso solicitar a remoção dos meus dados a qualquer momento (LGPD).</span>
+        </label>
+
+        <button class="btn-duo btn-duo-red" id="btn-reveal">
+          Ver Meu Nível Agora
+          <svg style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ TELA 4: RESULTADO (TROFÉU DUOLINGO) ============ -->
+    <section class="screen" id="scr-result">
+      <div class="verdict-duo">
+        <div class="trophy-badge">
+          <div class="trophy-code" id="r-code">B1</div>
+          <div class="trophy-name" id="r-name">Intermediário</div>
+        </div>
+
+        <div>
+          <div class="verdict-score-pill">
+            Pontuação Geral: <b id="r-score">48</b> / 100
+          </div>
+        </div>
+      </div>
+
+      <div class="breakdown">
+        <div class="bd">
+          <div class="bd-k">Gramática & Vocabulário</div>
+          <div class="bd-v" id="r-read">B1</div>
+          <div class="bd-bar"><i id="r-read-bar"></i></div>
+        </div>
+        <div class="bd">
+          <div class="bd-k">Leitura & Interpretação</div>
+          <div class="bd-v" id="r-listen">A2</div>
+          <div class="bd-bar listen"><i id="r-listen-bar"></i></div>
+        </div>
+      </div>
+
+      <p class="readout" id="r-readout"></p>
+      <ul class="canlist" id="r-can"></ul>
+
+      <div class="cta-box-duo">
+        <h3 id="r-cta-title">Seu Próximo Passo</h3>
+        <p id="r-cta-text"></p>
+        <div class="cta-row">
+          <button class="btn-duo btn-duo-green" id="btn-wpp">
+            <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.863-9.864.001-2.63-1.023-5.101-2.884-6.963C16.588 1.964 14.111.94 11.48.94c-5.437 0-9.863 4.42-9.866 9.863 0 1.77.476 3.5 1.38 5.02L2.01 21.04l5.375-1.411c.001-.001.001-.001.002-.001zM17.486 15c-.287-.144-1.695-.837-1.957-.933-.262-.096-.453-.144-.642.144-.19.287-.736.933-.903 1.122-.167.19-.334.21-.62.067-.287-.144-1.21-.446-2.305-1.424-.853-.761-1.428-1.7-1.595-1.987-.167-.287-.018-.442.126-.584.13-.127.287-.334.43-.502.142-.167.19-.287.285-.478.096-.19.048-.359-.024-.502-.072-.143-.642-1.549-.88-2.123-.233-.561-.469-.484-.642-.493-.166-.008-.358-.01-.55-.01s-.502.072-.765.359c-.263.287-1.004.981-1.004 2.392 0 1.41 1.028 2.77 1.171 2.962.143.192 2.023 3.09 4.9 4.336.685.297 1.219.474 1.637.607.689.219 1.316.188 1.812.114.553-.082 1.695-.693 1.934-1.362.239-.67.239-1.243.167-1.362-.072-.119-.263-.191-.55-.336z"/></svg>
+            Falar com a CCI no WhatsApp
+          </button>
+          <button class="btn-duo btn-duo-outline" id="btn-again">
+            <svg style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            Refazer o Teste
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+/* ============================================================================
+   CONFIGURAÇÃO
+   ========================================================================== */
+const CONFIG = {
+  WHATSAPP: "5514999999999",           // número da CCI com DDI+DDD, só dígitos
+  WEBHOOK:  "",                        // URL do n8n/Zapier/CRM. Vazio = só loga no console
+  SEGUNDOS_POR_QUESTAO: 60,            // 0 desliga o cronômetro
+  TOTAL_QUESTOES: 20,                  // total de questões no quiz
+  INTERMISSION_INTERVAL: 5             // a cada 5 questões, exibe tela de incentivo
+};
+
+/* ============================================================================
+   BANCO DE QUESTÕES — calibrado por nível CEFR (0=A1 a 5=C2)
+   ========================================================================== */
+const BANCO = [
+  // ---------- A1 ----------
+  {n:0, type:"multiple-choice", cat:"grammar", q:"She ____ a teacher at a small school near the park.", o:["is","are","am","be"], a:0},
+  {n:0, type:"multiple-choice", cat:"grammar", q:"I go to work ____ bus every morning.", o:["by","in","at","on"], a:0},
+  {n:0, type:"multiple-choice", cat:"grammar", q:"There ____ two windows in my bedroom.", o:["are","is","be","has"], a:0},
+  {n:0, type:"text-input", cat:"grammar", q:"Where ____ you from? (Escreva a palavra que falta)", a:["are"], o:["are","is","am","be"]},
+  {n:0, type:"text-input", cat:"grammar", q:"I have ____ cat and two dogs. (Escreva o artigo correspondente a 'um'/'uma')", a:["a"], o:["a","an","the","some"]},
+
+  // ---------- A2 ----------
+  {n:1, type:"multiple-choice", cat:"grammar", q:"We ____ to London last year and stayed for a week.", o:["went","go","have gone","are going"], a:0},
+  {n:1, type:"multiple-choice", cat:"grammar", q:"This is the ____ restaurant in town.", o:["best","better","most good","more best"], a:0},
+  {n:1, type:"multiple-choice", cat:"grammar", q:"How ____ sugar do you want in your coffee?", o:["much","many","lot","few"], a:0},
+  {n:1, type:"text-input", cat:"grammar", q:"She ____ (go) to the supermarket yesterday. (Escreva o verbo no passado)", a:["went"], o:["went","gone","go","goes"]},
+  {n:1, type:"text-input", cat:"grammar", q:"He is taller ____ his brother. (Escreva a palavra comparativa que falta)", a:["than"], o:["than","that","then","like"]},
+
+  // ---------- B1 ----------
+  {n:2, type:"multiple-choice", cat:"grammar", q:"I'm used to ____ up early during the week.", o:["getting","get","got","gets"], a:0},
+  {n:2, type:"multiple-choice", cat:"grammar", q:"The meeting was cancelled ____ the heavy rain.", o:["because of","because","although","so"], a:0},
+  {n:2, type:"multiple-choice", cat:"reading", p:"Hi Marcos — quick note before Friday. The venue confirmed the room, but they can only hold it until Wednesday without a deposit. Let me know today if you'd rather look at other options; otherwise I'll go ahead and pay it.",
+       q:"What does the writer want Marcos to do?", o:["Reply today if he prefers a different venue","Pay the deposit himself","Book a room for Friday","Cancel the event"], a:0},
+  {n:2, type:"text-input", cat:"grammar", q:"If I ____ (have) more time, I would learn French. (Escreva o verbo na forma correta)", a:["had"], o:["had","have","would have","had had"]},
+  {n:2, type:"text-input", cat:"grammar", q:"Although she was tired, she ____ playing tennis. (Escreva a preposição: 'kept ___')", a:["on"], o:["on","up","in","at"]},
+
+  // ---------- B2 ----------
+  {n:3, type:"multiple-choice", cat:"grammar", q:"Had I known about the deadline, I ____ things differently.", o:["would have planned","will plan","had planned","would plan"], a:0},
+  {n:3, type:"multiple-choice", cat:"grammar", q:"The proposal is ____ of further discussion.", o:["worthy","worth","worthwhile","valued"], a:0},
+  {n:3, type:"multiple-choice", cat:"reading", p:"The café has clearly put thought into its interior — reclaimed wood, careful lighting, the works. The coffee, sadly, has not received the same attention. It arrived lukewarm and tasted of very little.",
+       q:"What is the reviewer's overall opinion?", o:["The look is better than the coffee","Everything was excellent","The coffee saved the visit","The place is poorly decorated"], a:0},
+  {n:3, type:"text-input", cat:"grammar", q:"He is looking forward to ____ (meet) his new colleagues. (Escreva o verbo na forma correta)", a:["meeting"], o:["meeting","meet","to meet","met"]},
+  {n:3, type:"text-input", cat:"grammar", q:"I wish I ____ (can) fly. (Escreva o verbo na forma correta)", a:["could"], o:["could","can","would can","could have"]},
+
+  // ---------- C1 ----------
+  {n:4, type:"multiple-choice", cat:"grammar", q:"The committee's decision was ____ with widespread criticism.", o:["met","found","taken","held"], a:0},
+  {n:4, type:"multiple-choice", cat:"grammar", q:"____ for the intervention of a passer-by, the situation could have escalated.", o:["Were it not","If not","But","Had not"], a:0},
+  {n:4, type:"multiple-choice", cat:"reading", p:"Proponents of the scheme point to a modest rise in employment in the pilot region. Critics counter that the same period saw a national upturn, making it difficult to attribute the gain to the scheme itself.",
+       q:"What is the critics' main argument?", o:["The improvement may have other causes","Employment actually fell","The pilot region was too large","The scheme cost too much"], a:0},
+  {n:4, type:"text-input", cat:"grammar", q:"Despite ____ (feel) tired, she finished the report. (Escreva o verbo na forma correta)", a:["feeling"], o:["feeling","feel","having felt","felt"]},
+  {n:4, type:"text-input", cat:"grammar", q:"I would rather you ____ (not tell) anyone about this. (Escreva o auxiliar negativo no passado + verbo)", a:["didn't tell","did not tell"], o:["didn't tell","don't tell","hadn't told","haven't told"]},
+
+  // ---------- C2 ----------
+  {n:5, type:"multiple-choice", cat:"grammar", q:"The argument, ____ compelling, rests on a flawed premise.", o:["albeit","however","despite","nevertheless"], a:0},
+  {n:5, type:"multiple-choice", cat:"grammar", q:"Scarcely ____ the significance of the finding at the time.", o:["did anyone grasp","anyone grasped","anyone did grasp","had anyone grasp"], a:0},
+  {n:5, type:"multiple-choice", cat:"reading", p:"That the reforms were announced with such fanfare is, in retrospect, the most telling detail. Substantively, they amount to a tidying-up of provisions that were already falling into disuse.",
+       q:"What is the writer's implied view of the reforms?", o:["They were presented as more significant than they were","They were radical but poorly explained","They restored provisions that had been removed","They were announced too quietly"], a:0},
+  {n:5, type:"text-input", cat:"grammar", q:"Under no circumstances ____ you disclose this password. (Escreva a palavra auxiliar de obrigação/futuro que falta)", a:["should","must","will"], o:["should","will","would","do"]},
+  {n:5, type:"text-input", cat:"grammar", q:"It is high time we ____ (leave) for the airport. (Escreva o verbo no passado simples)", a:["left"], o:["left","leave","had left","were leaving"]}
+];
+
+/* ============================================================================
+   ESCALA CEFR
+   ========================================================================== */
+const NIVEIS = [
+  {c:"A1",nome:"Iniciante",min:1,max:30},
+  {c:"A2",nome:"Básico",min:31,max:40},
+  {c:"B1",nome:"Intermediário",min:41,max:50},
+  {c:"B2",nome:"Intermediário superior",min:51,max:60},
+  {c:"C1",nome:"Avançado",min:61,max:70},
+  {c:"C2",nome:"Proficiente",min:71,max:100}
+];
+
+const HABILIDADES = {
+  0:["Se apresentar e falar sobre rotina com frases curtas","Entender placas, preços e instruções simples","Preencher formulários com dados pessoais"],
+  1:["Conversar sobre assuntos do dia a dia com frases prontas","Entender o essencial de recados curtos e diretos","Descrever sua rotina, seu trabalho e seus planos imediatos"],
+  2:["Se virar sozinho em viagens e situações comuns","Acompanhar e-mails de trabalho e conversas em ritmo normal","Explicar opiniões e justificar escolhas de forma simples"],
+  3:["Participar de reuniões e discussões técnicas da sua área","Entender filmes e podcasts sem legenda na maior parte do tempo","Argumentar com clareza e defender um ponto de vista"],
+  4:["Se expressar com fluência sem procurar palavras","Captar ironia, subtexto e intenção do falante","Escrever textos complexos e bem estruturados"],
+  5:["Entender praticamente tudo que lê e ouve","Reconstruir argumentos e apresentá-los com precisão","Usar registro, nuance e humor com naturalidade"]
+};
+
+const PROXIMO_PASSO = {
+  0:"Turmas iniciantes começam pela base: pronúncia, verbos essenciais e conversação desde a primeira aula. É de onde a maioria dos nossos alunos sai falando em poucos meses.",
+  1:"Você já tem a base. O que trava agora é a fluidez — turmas de A2/B1 focam em conversação real e escuta em velocidade natural.",
+  2:"Nível intermediário é onde muita gente estaciona. Nossas turmas B1/B2 trabalham argumentação, vocabulário de trabalho e escuta sem legenda.",
+  3:"Você já se comunica bem. O passo seguinte é precisão e naturalidade — turmas avançadas e preparatórios para exames internacionais.",
+  4:"Nível avançado. Faz sentido pensar em preparatório para IELTS/TOEFL, inglês para negócios ou conversação de manutenção.",
+  5:"Seu nível é de proficiência. Nossas turmas de conversação avançada e preparatórios servem mais para manter e refinar do que para aprender do zero."
+};
+
+/* ============================================================================
+   ESTADO
+   ========================================================================== */
+let fila = [];
+let idx = 0;
+let escolha = null;
+let respostas = [];
+let timerId = null;
+let restante = 0;
+let inicioTeste = 0;
+let resultado = null;
+let leadNome = "";
+let hintUsadaNestaQuestao = false;
+const usadosQuestões = new Set();
+
+const $ = id => document.getElementById(id);
+
+/* ============================================================================
+   MOTOR ADAPTATIVO
+   ========================================================================== */
+function sortear(banco, nivel, cat, type, usados){
+  const disponiveis = banco.filter(q=>q.cat === cat && q.type === type && !usados.has(q));
+  if(!disponiveis.length) return null;
+  let melhor = disponiveis[0], dist = Math.abs(melhor.n - nivel);
+  const embaralhado = disponiveis.slice().sort(()=>Math.random()-.5);
+  for(const q of embaralhado){
+    const d = Math.abs(q.n - nivel);
+    if(d < dist){ dist = d; melhor = q; }
+  }
+  return melhor;
+}
+
+function montarFila(){
+  fila = [];
+  for(let i = 0; i < CONFIG.TOTAL_QUESTOES; i++) {
+    // 1. Categoria: Leitura (reading) a cada 5 questões (índices 2, 7, 12, 17)
+    const cat = (i % 5 === 2) ? "reading" : "grammar";
+    
+    // 2. Formato: Digitação (text-input) a cada 5 questões (índices 4, 9, 14, 19). Garante exatamente 20% (4 de 20).
+    const type = (i % 5 === 4) ? "text-input" : "multiple-choice";
+    
+    fila.push({ cat, type });
+  }
+}
+
+let nivelCorrente = 2; // começa em B1 (nível intermediário)
+
+function proximaQuestao(){
+  const slot = fila[idx];
+  let q = sortear(BANCO, nivelCorrente, slot.cat, slot.type, usadosQuestões);
+  if (!q) {
+    q = sortear(BANCO, nivelCorrente, "grammar", slot.type, usadosQuestões);
+  }
+  if (!q) return null;
+  usadosQuestões.add(q);
+  return q;
+}
+
+/* ============================================================================
+   SÍNTESE DE ÁUDIO WEB AUDIO (FEEDBACK TÁTIL DUOLINGO)
+   ========================================================================== */
+const AudioCtx = window.AudioContext || window.webkitAudioContext;
+let audioCtx = null;
+
+function playDuoSound(type){
+  try {
+    if (!audioCtx) audioCtx = new AudioCtx();
+    if (audioCtx.state === "suspended") audioCtx.resume();
+
+    const now = audioCtx.currentTime;
+    if (type === "click") {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(440, now);
+      osc.frequency.exponentialRampToValueAtTime(660, now + 0.05);
+      gain.gain.setValueAtTime(0.12, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.06);
+    } else if (type === "success") {
+      const freqs = [523.25, 659.25, 783.99]; // C5, E5, G5
+      freqs.forEach((f, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(f, now + i * 0.08);
+        gain.gain.setValueAtTime(0.15, now + i * 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + i * 0.08 + 0.2);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + i * 0.08);
+        osc.stop(now + i * 0.08 + 0.22);
+      });
+    }
+  } catch(e) {}
+}
+
+/* ============================================================================
+   RENDER DA QUESTÃO
+   ========================================================================== */
+let atual = null;
+
+function revelarOpcoesDica(q) {
+  playDuoSound("click");
+  $("q-text-input-container").hidden = true;
+  $("q-options").hidden = false;
+  
+  const letras = ["A","B","C","D"];
+  const ordem = q.o.map((txt,i)=>({txt,i})).sort(()=>Math.random()-.5);
+  $("q-options").innerHTML = ordem.map((op,pos)=>
+    `<button class="option" data-txt="${op.txt}">
+       <span class="option-key">${letras[pos]}</span><span>${op.txt}</span>
+     </button>`
+  ).join("");
+
+  document.querySelectorAll(".option").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      playDuoSound("click");
+      document.querySelectorAll(".option").forEach(b=>b.classList.remove("picked"));
+      btn.classList.add("picked");
+      escolha = btn.dataset.txt;
+      $("btn-next").disabled = false;
+      $("q-hint").textContent = "Alternativa selecionada.";
+    });
+  });
+  
+  $("btn-next").disabled = true;
+  $("q-hint").textContent = "Dica ativada (-50% pontos). Escolha uma opção:";
+}
+
+function renderQuestao(){
+  atual = proximaQuestao();
+  if(!atual){ finalizar(); return; }
+
+  escolha = null;
+  hintUsadaNestaQuestao = false;
+  const q = atual;
+
+  $("q-chip").textContent = q.cat === "grammar" ? "Gramática" : "Leitura";
+  $("q-count").textContent = String(idx+1).padStart(2,"0") + " / " + fila.length;
+  $("q-progress").style.width = (((idx + 1) / fila.length) * 100) + "%";
+
+  // Texto de apoio (passagem de leitura)
+  if(q.p){ 
+    $("q-passage").hidden = false; 
+    $("q-passage").innerHTML = `<div class="duo-passage-tag"><svg style="width:14px;height:14px;fill:currentColor;" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg> Texto de Apoio:</div>` + q.p; 
+  } else { 
+    $("q-passage").hidden = true; 
+  }
+
+  $("q-text").textContent = q.q;
+
+  const textInputContainer = $("q-text-input-container");
+  const optionsContainer = $("q-options");
+
+  if(q.type === "multiple-choice"){
+    textInputContainer.hidden = true;
+    optionsContainer.hidden = false;
+    
+    const letras = ["A","B","C","D"];
+    const ordem = q.o.map((txt,i)=>({txt,i})).sort(()=>Math.random()-.5);
+    optionsContainer.innerHTML = ordem.map((op,pos)=>
+      `<button class="option" data-orig="${op.i}">
+         <span class="option-key">${letras[pos]}</span><span>${op.txt}</span>
+       </button>`
+    ).join("");
+
+    document.querySelectorAll(".option").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        playDuoSound("click");
+        document.querySelectorAll(".option").forEach(b=>b.classList.remove("picked"));
+        btn.classList.add("picked");
+        escolha = +btn.dataset.orig;
+        $("btn-next").disabled = false;
+        $("q-hint").textContent = "Alternativa selecionada.";
+      });
+    });
+
+    $("btn-next").disabled = true;
+    $("q-hint").textContent = "Escolha uma alternativa para continuar.";
+  } else {
+    // Tipo text-input (20% das questões)
+    optionsContainer.hidden = true;
+    textInputContainer.hidden = false;
+    
+    const input = $("q-text-input");
+    input.value = "";
+    setTimeout(() => input.focus(), 50);
+
+    $("btn-next").disabled = true;
+    $("q-hint").textContent = "Escreva sua resposta ou peça uma dica:";
+
+    input.oninput = () => {
+      const valor = input.value.trim();
+      if(valor.length > 0) {
+        escolha = valor;
+        $("btn-next").disabled = false;
+        $("q-hint").textContent = "Pronto para verificar!";
+      } else {
+        escolha = null;
+        $("btn-next").disabled = true;
+        $("q-hint").textContent = "Escreva sua resposta para continuar.";
+      }
+    };
+
+    $("btn-hint").onclick = () => {
+      hintUsadaNestaQuestao = true;
+      revelarOpcoesDica(q);
+    };
+  }
+
+  iniciarCronometro();
+}
+
+function iniciarCronometro(){
+  clearInterval(timerId);
+  if(!CONFIG.SEGUNDOS_POR_QUESTAO){ $("q-clock").textContent = ""; return; }
+  restante = CONFIG.SEGUNDOS_POR_QUESTAO;
+  $("q-clock").textContent = restante + "s";
+  $("q-clock").classList.remove("urgent");
+  timerId = setInterval(()=>{
+    restante--;
+    $("q-clock").textContent = restante + "s";
+    $("q-clock").classList.toggle("urgent", restante <= 10);
+    if(restante <= 0){ clearInterval(timerId); confirmar(true); }
+  }, 1000);
+}
+
+function confirmar(porTempo){
+  if(!porTempo && escolha === null) return;
+  clearInterval(timerId);
+
+  let acertou = false;
+  if (!porTempo) {
+    if (atual.type === "multiple-choice") {
+      acertou = escolha === atual.a;
+    } else {
+      const formatado = escolha.trim().toLowerCase();
+      acertou = atual.a.map(ans => ans.trim().toLowerCase()).includes(formatado);
+    }
+  }
+
+  if (acertou) playDuoSound("success");
+  else playDuoSound("click");
+
+  respostas.push({cat: atual.cat, nivel: atual.n, acertou, hintUsed: hintUsadaNestaQuestao});
+
+  nivelCorrente = acertou ? Math.min(5, nivelCorrente+1) : Math.max(0, nivelCorrente-1);
+  idx++;
+
+  if(idx >= fila.length){
+    finalizar();
+  } else if(idx % CONFIG.INTERMISSION_INTERVAL === 0) {
+    exibirIntermission();
+  } else {
+    prosseguirQuiz();
+  }
+}
+
+/* ============================================================
+   TELA DE INTERAÇÃO (CELEBRAÇÃO DUOLINGO)
+   ============================================================ */
+function exibirIntermission(){
+  playDuoSound("success");
+  let titulo = "Ótimo Trabalho!";
+  let texto = `Você completou ${idx} questões! O teste está calibrando seu nível ideal de inglês.`;
+
+  if (idx === 5) {
+    titulo = `Mandou bem, ${leadNome}! 🔥`;
+    texto = "Você concluiu o primeiro bloco! Suas respostas até aqui nos ajudaram a mapear seu vocabulário inicial.";
+  } else if (idx === 10) {
+    titulo = `Metade do caminho, ${leadNome}! ⚡`;
+    texto = "Excelente foco! As próximas questões estão se adaptando especificamente à sua precisão gramatical.";
+  } else if (idx === 15) {
+    titulo = `Reta final, ${leadNome}! 🏆`;
+    texto = "Você está a apenas 5 perguntas de desbloquear o seu nível oficial de proficiência CEFR.";
+  }
+
+  $("intermission-title").textContent = titulo;
+  $("intermission-text").textContent = texto;
+
+  mostrar("scr-intermission");
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function prosseguirQuiz(){
+  mostrar("scr-quiz");
+  renderQuestao();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+$("btn-intermission-continue").addEventListener("click", prosseguirQuiz);
+
+/* ============================================================================
+   PONTUAÇÃO
+   ========================================================================== */
+function theta(lista){
+  if(!lista.length) return 0;
+  const soma = lista.reduce((s,r)=> {
+    let val = -0.5;
+    if (r.acertou) {
+      val = r.hintUsed ? 0.15 : 0.5;
+    }
+    return s + r.nivel + val;
+  }, 0);
+  return soma / lista.length;
+}
+
+function faixa(t){
+  if(t < 0.75) return 0;
+  if(t < 1.75) return 1;
+  if(t < 2.75) return 2;
+  if(t < 3.75) return 3;
+  if(t < 4.55) return 4;
+  return 5;
+}
+
+function pontuar(t){
+  const i = faixa(t);
+  const n = NIVEIS[i];
+  const pisos = [-0.5,0.75,1.75,2.75,3.75,4.55];
+  const tetos = [0.75,1.75,2.75,3.75,4.55,5.5];
+  const frac = Math.min(1, Math.max(0, (t - pisos[i]) / (tetos[i]-pisos[i])));
+  return {indice:i, nivel:n, score: Math.round(n.min + frac*(n.max-n.min))};
+}
+
+function finalizar(){
+  clearInterval(timerId);
+  playDuoSound("success");
+  const tGeral  = theta(respostas);
+  const tGrammar = theta(respostas.filter(r=>r.cat==="grammar"));
+  const tReadingRaw = respostas.filter(r=>r.cat==="reading");
+  const tReading = tReadingRaw.length ? theta(tReadingRaw) : tGeral;
+
+  const geral = pontuar(tGeral);
+  const dicas = respostas.filter(r=>r.hintUsed).length;
+  resultado = {
+    nivel: geral.nivel.c,
+    nome: geral.nivel.nome,
+    score: Math.max(geral.nivel.min, geral.score - (dicas * 3)),
+    indice: geral.indice,
+    leitura: NIVEIS[faixa(tGrammar)].c,
+    leituraPct: Math.round((faixa(tGrammar)+1)/6*100),
+    audicao: NIVEIS[faixa(tReading)].c,
+    audicaoPct: Math.round((faixa(tReading)+1)/6*100),
+    acertos: respostas.filter(r=>r.acertou).length,
+    total: respostas.length,
+    dicasUsadas: dicas,
+    duracaoSeg: Math.round((Date.now()-inicioTeste)/1000)
+  };
+  mostrar("scr-form");
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* ============================================================================
+   LEAD & VALIDAÇÃO
+   ========================================================================== */
+function paramsURL(){
+  const p = new URLSearchParams(location.search);
+  const out = {};
+  ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ctwa_clid","fbclid"]
+    .forEach(k=>{ if(p.get(k)) out[k] = p.get(k); });
+  return out;
+}
+
+function mascaraFone(v){
+  const d = v.replace(/\D/g,"").slice(0,11);
+  if(d.length <= 2) return d.length ? "("+d : "";
+  if(d.length <= 6) return "("+d.slice(0,2)+") "+d.slice(2);
+  if(d.length <= 10) return "("+d.slice(0,2)+") "+d.slice(2,6)+"-"+d.slice(6);
+  return "("+d.slice(0,2)+") "+d.slice(2,7)+"-"+d.slice(7);
+}
+
+function validar(){
+  let ok = true;
+  const nome = $("i-nome").value.trim();
+  const email = $("i-email").value.trim();
+  const fone = $("i-fone").value.replace(/\D/g,"");
+
+  $("f-nome").classList.toggle("invalid", nome.length < 2);
+  if(nome.length < 2) ok = false;
+
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  $("f-email").classList.toggle("invalid", !emailOk);
+  if(!emailOk) ok = false;
+
+  const foneOk = fone.length >= 10;
+  $("f-fone").classList.toggle("invalid", !foneOk);
+  if(!foneOk) ok = false;
+
+  if(!$("i-consent").checked){
+    ok = false;
+    $("l-consent").style.color = "var(--duo-red)";
+    setTimeout(()=>$("l-consent").style.color = "", 2000);
+  }
+  return ok ? {nome,email,fone} : null;
+}
+
+async function enviarLead(dados){
+  const payload = {
+    ...dados,
+    ...resultado,
+    origem: "teste-nivel-ingles-v2-duolingo",
+    cliente: "CCI Marília",
+    url: location.href,
+    criadoEm: new Date().toISOString(),
+    parametros: paramsURL()
+  };
+
+  if(!CONFIG.WEBHOOK){
+    console.log("[LEAD CCI V2 DUOLINGO]", payload);
+    return;
+  }
+  try {
+    await fetch(CONFIG.WEBHOOK, {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify(payload),
+      mode: "no-cors"
+    });
+  } catch(e){
+    console.warn("Falha no webhook:", e);
+  }
+}
+
+/* ============================================================
+   TELA DE RESULTADOS
+   ============================================================ */
+function exibirResultado(){
+  $("r-code").textContent = resultado.nivel;
+  $("r-name").textContent = resultado.nome;
+  $("r-score").textContent = resultado.score;
+
+  $("r-read").textContent = resultado.leitura;
+  $("r-listen").textContent = resultado.audicao;
+
+  const i = resultado.indice;
+  $("r-readout").textContent =
+    `Seu perfil se encaixa no nível ${resultado.nivel} (${resultado.nome}). ` +
+    `Isso significa que você tem facilidade com estruturas básicas e vocabulário do dia a dia, ` +
+    `com ótimo potencial para atingir fluência avançada com o método certo.`;
+
+  $("r-can").innerHTML = (HABILIDADES[i] || []).map(h=>`<li>${h}</li>`).join("");
+
+  $("r-cta-title").textContent = `O próximo passo para o nível ${resultado.nivel}`;
+  $("r-cta-text").textContent = PROXIMO_PASSO[i] || "";
+
+  mostrar("scr-result");
+
+  requestAnimationFrame(()=>{
+    $("r-read-bar").style.width = resultado.leituraPct + "%";
+    $("r-listen-bar").style.width = resultado.audicaoPct + "%";
+  });
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* ============================================================
+   NAVEGAÇÃO
+   ============================================================ */
+function mostrar(id){
+  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("on"));
+  $(id).classList.add("on");
+}
+
+/* ============================================================
+   EVENTOS
+   ============================================================ */
+$("i-intro-nome").addEventListener("input", e => {
+  const fIntro = $("f-intro-nome");
+  if(e.target.value.trim().length >= 2) fIntro.classList.remove("invalid");
+});
+
+$("i-intro-fone").addEventListener("input", e => {
+  e.target.value = mascaraFone(e.target.value);
+  const fIntroFone = $("f-intro-fone");
+  const foneNum = e.target.value.replace(/\D/g,"");
+  if(foneNum.length >= 10) fIntroFone.classList.remove("invalid");
+});
+
+$("btn-start").addEventListener("click", ()=>{
+  playDuoSound("click");
+  const nomeIntro = $("i-intro-nome").value.trim();
+  const foneIntro = $("i-intro-fone").value.replace(/\D/g,"");
+  const fIntro = $("f-intro-nome");
+  const fIntroFone = $("f-intro-fone");
+  
+  let valid = true;
+  if (nomeIntro.length < 2) {
+    fIntro.classList.add("invalid");
+    valid = false;
+  } else {
+    fIntro.classList.remove("invalid");
+  }
+
+  if (foneIntro.length < 10) {
+    fIntroFone.classList.add("invalid");
+    valid = false;
+  } else {
+    fIntroFone.classList.remove("invalid");
+  }
+
+  if (!valid) {
+    if (nomeIntro.length < 2) $("i-intro-nome").focus();
+    else $("i-intro-fone").focus();
+    return;
+  }
+  
+  leadNome = nomeIntro;
+  $("i-nome").value = leadNome;
+  $("i-fone").value = $("i-intro-fone").value;
+  
+  montarFila();
+  idx = 0; respostas = []; nivelCorrente = 2;
+  usadosQuestões.clear();
+  inicioTeste = Date.now();
+  mostrar("scr-quiz");
+  renderQuestao();
+});
+
+$("btn-next").addEventListener("click", ()=>confirmar(false));
+
+$("i-fone").addEventListener("input", e=>{ e.target.value = mascaraFone(e.target.value); });
+
+$("btn-reveal").addEventListener("click", async ()=>{
+  playDuoSound("click");
+  const dados = validar();
+  if(!dados) return;
+  $("btn-reveal").disabled = true;
+  $("btn-reveal").textContent = "Carregando seu nível...";
+  await enviarLead(dados);
+  exibirResultado();
+});
+
+$("btn-wpp").addEventListener("click", ()=>{
+  playDuoSound("click");
+  const fone = CONFIG.WHATSAPP.replace(/\D/g,"");
+  const txt = encodeURIComponent(
+    `Olá! Fiz o teste de inglês da CCI Marília e meu resultado preliminar foi nível ${resultado.nivel} (${resultado.nome}, score ${resultado.score}/100). Gostaria de agendar minha análise detalhada!`
+  );
+  window.open(`https://wa.me/${fone}?text=${txt}`, "_blank");
+});
+
+$("btn-again").addEventListener("click", ()=>{
+  playDuoSound("click");
+  mostrar("scr-intro");
+  window.scrollTo({top:0, behavior:"smooth"});
+});
+
+// Suporte a teclado: teclas 1-4 selecionam opções e Enter confirma
+document.addEventListener("keydown", e=>{
+  if(!$("scr-quiz").classList.contains("on")) return;
+  
+  const textInputContainer = $("q-text-input-container");
+  if(!textInputContainer.hidden) {
+    if(e.key === "Enter" && !$("btn-next").disabled) {
+      confirmar(false);
+    }
+    return;
+  }
+
+  const opts = document.querySelectorAll(".option");
+  if(["1","2","3","4"].includes(e.key)){
+    const alvo = opts[+e.key - 1];
+    if(alvo) alvo.click();
+  }
+  if(e.key === "Enter" && !$("btn-next").disabled) confirmar(false);
+});
+</script>
+
+</body>
+</html>

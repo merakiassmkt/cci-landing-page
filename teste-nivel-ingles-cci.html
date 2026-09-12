@@ -1012,7 +1012,7 @@ h1 em {
 <div class="shell">
 
   <header class="masthead">
-    <div class="brand">CCI <span>Marília</span></div>
+    <div class="brand"><img src="logo-cci.png" alt="CCI Marília" style="height: 32px; width: auto; object-fit: contain;"></div>
     <div class="masthead-tag">Teste de nivelamento · CEFR</div>
   </header>
 
@@ -1048,10 +1048,16 @@ h1 em {
           </div>
         </div>
 
-        <div class="field" id="f-intro-nome" style="margin-bottom: 28px; max-width: 420px;">
+        <div class="field" id="f-intro-nome" style="margin-bottom: 20px; max-width: 420px;">
           <label for="i-intro-nome">Para começar, como podemos te chamar?</label>
           <input type="text" id="i-intro-nome" placeholder="Digite seu primeiro nome" autocomplete="given-name">
-          <div class="err">Por favor, escreva seu nome para iniciar.</div>
+          <div class="err">Por favor, escreva seu nome.</div>
+        </div>
+
+        <div class="field" id="f-intro-fone" style="margin-bottom: 28px; max-width: 420px;">
+          <label for="i-intro-fone">E o seu WhatsApp?</label>
+          <input type="tel" id="i-intro-fone" placeholder="(14) 90000-0000" autocomplete="tel" maxlength="16">
+          <div class="err">Informe DDD e número válidos.</div>
         </div>
 
         <button class="btn" id="btn-start">
@@ -1119,7 +1125,7 @@ h1 em {
           <input type="email" id="i-email" autocomplete="email" placeholder="voce@email.com">
           <div class="err">Confira o e-mail — parece incompleto.</div>
         </div>
-        <div class="field" id="f-fone">
+        <div class="field" id="f-fone" hidden>
           <label for="i-fone">WhatsApp</label>
           <input type="tel" id="i-fone" autocomplete="tel" placeholder="(14) 90000-0000" maxlength="16">
           <div class="err">Informe DDD e número.</div>
@@ -1688,27 +1694,49 @@ function mostrar(id){
 /* ============================================================================
    EVENTOS
    ========================================================================== */
-// Habilita o início ao validar o nome inicial
+// Habilita o início ao validar o nome e fone
 $("i-intro-nome").addEventListener("input", e => {
   const fIntro = $("f-intro-nome");
-  if(e.target.value.trim().length >= 2) {
-    fIntro.classList.remove("invalid");
-  }
+  if(e.target.value.trim().length >= 2) fIntro.classList.remove("invalid");
+});
+
+$("i-intro-fone").addEventListener("input", e => {
+  e.target.value = mascaraFone(e.target.value);
+  const fIntroFone = $("f-intro-fone");
+  const foneNum = e.target.value.replace(/\D/g,"");
+  if(foneNum.length >= 10) fIntroFone.classList.remove("invalid");
 });
 
 $("btn-start").addEventListener("click", ()=>{
   const nomeIntro = $("i-intro-nome").value.trim();
+  const foneIntro = $("i-intro-fone").value.replace(/\D/g,"");
   const fIntro = $("f-intro-nome");
+  const fIntroFone = $("f-intro-fone");
   
+  let valid = true;
   if (nomeIntro.length < 2) {
     fIntro.classList.add("invalid");
-    $("i-intro-nome").focus();
+    valid = false;
+  } else {
+    fIntro.classList.remove("invalid");
+  }
+
+  if (foneIntro.length < 10) {
+    fIntroFone.classList.add("invalid");
+    valid = false;
+  } else {
+    fIntroFone.classList.remove("invalid");
+  }
+
+  if (!valid) {
+    if (nomeIntro.length < 2) $("i-intro-nome").focus();
+    else $("i-intro-fone").focus();
     return;
   }
-  fIntro.classList.remove("invalid");
   
   leadNome = nomeIntro;
   $("i-nome").value = leadNome; // preenche o input escondido
+  $("i-fone").value = $("i-intro-fone").value; // preenche o whatsapp escondido
   
   montarFila();
   idx = 0; respostas = []; nivelCorrente = 2;
