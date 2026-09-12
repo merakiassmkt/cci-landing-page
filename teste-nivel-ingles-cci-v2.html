@@ -98,14 +98,22 @@ body {
   flex: 1;
 }
 
-/* Cabeçalho Duolingo */
+/* Cabeçalho Duolingo — Topo na cor Azul Oficial da Marca CCI */
 .masthead {
-  padding: 20px 0;
+  width: 100%;
+  background: var(--duo-cci-blue);
+  border-bottom: 4px solid var(--duo-cci-blue-shadow);
+  box-shadow: 0 4px 16px rgba(27, 54, 93, 0.15);
+  margin-bottom: 24px;
+}
+
+.masthead-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid var(--duo-border);
-  margin-bottom: 24px;
 }
 
 .brand {
@@ -126,11 +134,13 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: var(--duo-cci-blue);
-  background: var(--duo-cci-blue-light);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.18);
   padding: 6px 14px;
   border-radius: var(--radius-pill);
-  border: 2px solid rgba(27, 54, 93, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -182,31 +192,19 @@ body {
   width: 100%;
 }
 
-/* Verde Clássico Duolingo (Avançar/Confirmar) */
-.btn-duo-green {
-  background: var(--duo-green);
-  color: #ffffff;
-  border-color: var(--duo-green);
-  border-bottom: 5px solid var(--duo-green-shadow);
-}
-.btn-duo-green:hover:not(:disabled) {
-  filter: brightness(1.06);
-}
-.btn-duo-green:active:not(:disabled) {
-  transform: translateY(3px);
-  border-bottom-width: 2px;
-}
-
-/* Azul CCI Marília */
+/* Botão Principal no Azul Oficial da CCI Marília */
+.btn-duo-green,
 .btn-duo-blue {
   background: var(--duo-cci-blue);
   color: #ffffff;
   border-color: var(--duo-cci-blue);
   border-bottom: 5px solid var(--duo-cci-blue-shadow);
 }
+.btn-duo-green:hover:not(:disabled),
 .btn-duo-blue:hover:not(:disabled) {
-  filter: brightness(1.15);
+  filter: brightness(1.18);
 }
+.btn-duo-green:active:not(:disabled),
 .btn-duo-blue:active:not(:disabled) {
   transform: translateY(3px);
   border-bottom-width: 2px;
@@ -238,6 +236,21 @@ body {
   filter: brightness(1.05);
 }
 .btn-duo-yellow:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+}
+
+/* Verde WhatsApp Oficial */
+.btn-duo-wpp {
+  background: #25d366;
+  color: #ffffff;
+  border-color: #25d366;
+  border-bottom: 5px solid #128c7e;
+}
+.btn-duo-wpp:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.btn-duo-wpp:active:not(:disabled) {
   transform: translateY(3px);
   border-bottom-width: 2px;
 }
@@ -1030,8 +1043,10 @@ body {
 
   /* Cabeçalho compacto */
   .masthead {
-    padding: 14px 0 16px;
     margin-bottom: 16px;
+  }
+  .masthead-inner {
+    padding: 12px 16px;
   }
   .brand img {
     height: 28px;
@@ -1329,19 +1344,20 @@ body {
 </head>
 <body>
 
-<div class="shell">
-
-  <!-- CABEÇALHO COM LOGO OFICIAL CCI -->
-  <header class="masthead">
+<!-- CABEÇALHO AZUL OFICIAL CCI COM LOGO BRANCA -->
+<header class="masthead">
+  <div class="masthead-inner">
     <div class="brand">
-      <img src="logo-cci.png" alt="CCI Marília">
+      <img src="logo-white.png" alt="CCI Marília">
     </div>
     <div class="masthead-badge">
       <svg style="width: 14px; height: 14px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       Teste de Nivelamento
     </div>
-  </header>
+  </div>
+</header>
 
+<div class="shell">
   <main>
 
     <!-- ============ TELA 1: ABERTURA (DUOLINGO STYLE) ============ -->
@@ -1404,7 +1420,7 @@ body {
           <div class="err">Informe um número de WhatsApp válido.</div>
         </div>
 
-        <button class="btn-duo btn-duo-green" id="btn-start" style="margin-top: 10px;">
+        <button class="btn-duo btn-duo-blue" id="btn-start" style="margin-top: 10px;">
           Começar o Teste
           <svg style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
@@ -1458,7 +1474,7 @@ body {
       <div class="duo-fixed-footer">
         <div class="duo-fixed-footer-inner">
           <span class="duo-footer-hint" id="q-hint">Escolha uma alternativa para continuar.</span>
-          <button class="btn-duo btn-duo-green" id="btn-next" disabled>
+          <button class="btn-duo btn-duo-blue" id="btn-next" disabled>
             Verificar
             <svg style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
@@ -1476,7 +1492,7 @@ body {
         <p id="intermission-text">
           Você está mandando muito bem. O teste está se adaptando às suas respostas para calibrar o seu nível exato.
         </p>
-        <button class="btn-duo btn-duo-green" id="btn-intermission-continue" style="max-width: 380px; margin: 0 auto;">
+        <button class="btn-duo btn-duo-blue" id="btn-intermission-continue" style="max-width: 380px; margin: 0 auto;">
           Continuar Lição
           <svg style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
@@ -1557,7 +1573,7 @@ body {
         <h3 id="r-cta-title">Seu Próximo Passo</h3>
         <p id="r-cta-text"></p>
         <div class="cta-row">
-          <button class="btn-duo btn-duo-green" id="btn-wpp">
+          <button class="btn-duo btn-duo-wpp" id="btn-wpp">
             <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.863-9.864.001-2.63-1.023-5.101-2.884-6.963C16.588 1.964 14.111.94 11.48.94c-5.437 0-9.863 4.42-9.866 9.863 0 1.77.476 3.5 1.38 5.02L2.01 21.04l5.375-1.411c.001-.001.001-.001.002-.001zM17.486 15c-.287-.144-1.695-.837-1.957-.933-.262-.096-.453-.144-.642.144-.19.287-.736.933-.903 1.122-.167.19-.334.21-.62.067-.287-.144-1.21-.446-2.305-1.424-.853-.761-1.428-1.7-1.595-1.987-.167-.287-.018-.442.126-.584.13-.127.287-.334.43-.502.142-.167.19-.287.285-.478.096-.19.048-.359-.024-.502-.072-.143-.642-1.549-.88-2.123-.233-.561-.469-.484-.642-.493-.166-.008-.358-.01-.55-.01s-.502.072-.765.359c-.263.287-1.004.981-1.004 2.392 0 1.41 1.028 2.77 1.171 2.962.143.192 2.023 3.09 4.9 4.336.685.297 1.219.474 1.637.607.689.219 1.316.188 1.812.114.553-.082 1.695-.693 1.934-1.362.239-.67.239-1.243.167-1.362-.072-.119-.263-.191-.55-.336z"/></svg>
             Falar com a CCI no WhatsApp
           </button>
